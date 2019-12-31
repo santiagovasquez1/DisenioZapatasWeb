@@ -6,13 +6,20 @@ propiedades
 valores
 */
 
+
 /* Selector de etiqueta header -section -article -nav*/
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Fjalla One'sans-serif;
     font-weight: normal;
 }
@@ -24,21 +31,38 @@ h1 {
     text-transform: none;
     text-decoration: none;
     color: white;
+    margin: 0px;
+    padding: 20px;
 }
 
 h1 strong {
     color: #026fff;
 }
 
-
-
 .hero {
     height: 300px;
     background-color: #1b2127;
-    background-image: url('../images/hero.jpg');
-    background-size: 500px 300px;
+    background-image: url('../images/Santiago-Vasquez-Gomez.jpg');
+    background-size: 300px 300px;
     background-repeat: no-repeat;
     background-position-x: right;
+}
+
+#portafolio {
+    font-size: 20px;
+    opacity: unset;
+    background: #fafafa;
+}
+
+.project {
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 15px;
+    padding: 20px;
+    background: white;
+    display: flex;
+    /* border-top-left-radius: 20px; */
 }
 
 .project-details {
@@ -57,27 +81,19 @@ header {
     /*Color del texto */
 }
 
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    flex-shrink: 0;
+}
+
 header a {
     color: white;
     text-decoration: none;
-}
-
-/* Selector descentente */
-
-/*body header div nav ol li a*/
-
-/*Selector de clase*/
-
-/*
-.link {
-    color: salmon;
-}
-*/
-
-/*Selector id */
-
-#portafolio {
-    font-size: 20px;
-    opacity: unset;
-    background-color:white;
 }
