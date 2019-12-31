@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF8"/>        
-        <title>Santiago Vasquez Gomez</title>        
-        <link rel="icon" type="image/png" href="images/favicon.png"> <!--Imagen en la pestaña-->
-        <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="CSS/estilos.css"><!--Enlace de estilo por archivo-->
-<!--
+
+<head>
+    <meta charset="UTF8" />
+    <title>Santiago Vasquez Gomez</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!--Imagen en la pestaña-->
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <!--Enlace de estilo por archivo-->
+    <!--
         <style>
             header{
                 color: darkslategray;
@@ -14,65 +17,107 @@
             }
         </style>
     -->
-    </head>
-    <body>
-        <header class="header"><!--Encabezado de la pagina web-->
-            <div>
-                <figure class="logo">
-                    <img src="images/logo.png" alt="Imagen de portada"> 
-                </figure>            
-                <nav class="menu"><!--Menu de navegacion dentro de nuestra pagina web-->
-                    <ol><!--Label para iniciar una lista ordenada dentro de la pagina-->
-                        <li>
-                            <a class="link" href="./portafolio/index.html">Portafolio</a> <!--Enlace a nueva pagina dentro de la pagina-->
-                        </li>
-                        <li>
-                            <a  class="link" href="#experiencia">Experiencia</a><!--Enlace a nueva pagina dentro de la pagina-->
-                        </li>
-                        <li>
-                            <a class="link" href="#Contacto">Trabajemos juntos</a><!--Enlace a nueva pagina dentro de la pagina-->
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </header>
-        <section class="hero"> <!--Seccion principal-->
-            <h1><!--Titulo principal-->
-                Hola! Soy  <strong>Santiago ingeniero civil</strong> <br/> con pasión por el desarrollo de aplicaciones <br/> especializadas para <strong>ingenieria civil</strong> 
-            </h1> 
-            <img src="images/hero.jpg" alt="Imagen principipal" width="500" /> 
-        </section>
-        <section id="portafolio" class="portfolio"><!--Sección portaforlio-->
-            <h2>Portafolio (Proyectos destacados)</h2>
-            <article class="proyect">
-                <h3 class="proyect-title">Diseño de muros de concreto</h3>
+</head>
+
+<body>
+    <header class="header">
+        <!--Encabezado de la pagina web-->
+        <div>
+            <figure class="logo">
+                <img src="images/logo.png" alt="Imagen de portada">
+            </figure>
+            <nav class="menu">
+                <!--Menu de navegacion dentro de nuestra pagina web-->
+                <ol>
+                    <!--Label para iniciar una lista ordenada dentro de la pagina-->
+                    <li>
+                        <a class="link" href="./portafolio/index.html">Portafolio</a>
+                        <!--Enlace a nueva pagina dentro de la pagina-->
+                    </li>
+                    <li>
+                        <a class="link" href="#experiencia">Experiencia</a>
+                        <!--Enlace a nueva pagina dentro de la pagina-->
+                    </li>
+                    <li>
+                        <a class="link" href="#Contacto">Trabajemos juntos</a>
+                        <!--Enlace a nueva pagina dentro de la pagina-->
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <!--Seccion principal-->
+        <h1>
+            <!--Titulo principal-->
+            Hola! Soy <strong>Santiago Vásquez <br> ingeniero civil</strong> con pasión por el <br> desarrollo de
+            aplicaciones especializadas<br>para<strong>ingenieria civil</strong>
+        </h1>
+        <!--<img src="images/hero.jpg" alt="Imagen principipal" width="500" />-->
+    </section>
+    <section id="portafolio" class="portfolio">
+        <!--Sección portaforlio-->
+        <h2>Portafolio (Software de diseño)</h2>
+        <article class="project">
+            <div class="project-details">
+                <h3 class="project-title">Diseño de muros de concreto</h3>
                 <h6 class="project-lenguaje">C#</h6>
-                <p class="project-date"><small> <strong>Fecha:</strong>  09/09/2019</small> </p>
+                <p class="project-date"><small> <strong>Fecha:</strong> 09/09/2019</small> </p>
                 <p class="url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
-                <p class="project-description">Programa para el diseño, despiece y dibujo autmatico de muros de concreto <br> siguiendo todos los parametros de la NSR10</p>
-                <figure class="project-image-container">
-                    <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
-                </figure>
-            </article>
-        </section>
-        <section id="experiencia" class="experience"><!--Sección eventos-->
-            <h2 class="experience-title">Más sobre mi experiencia</h2>
-            <article class="experience-event">
-                <figure class="experience-image-container">
-                    <img class="experience-image" src="images/platzi-conf.jpg" alt="Platziconf" width="500"/>
-                </figure>
-                <h3 class="experience-title">Platziconf Mexico</h3>
-                <p class="experience-description">El evento más grande sobre gente que quiere aprender más de internet</p>
-                <a class="experience-url" href="https://www.youtube.com/watch?v=c4yiewZeiac" target="_blank">Ver plática</a>
-            </article>
-        </section>
-        <section id="Contacto" class="Contact">
-            <form action="/suscripcion/" class="form-email">
-                <h3>¿Creamos algo juntos?</h3>
-                <input type="email" placeholder="Déjame tu email" id="email">
-                <button>Enviar</button>
-            </form>
-        </section>
-        <footer class="footer">footer</footer>
-    </body>
+                <p class="project-description">Programa para el diseño, despiece y dibujo autmatico de muros de concreto
+                    <br> siguiendo todos los parametros de la NSR10</p>
+            </div>
+            <figure class="project-image-container">
+                <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
+            </figure>
+        </article>
+        <article class="Columnas">
+            <div class="project-details">
+                <h3 class="project-title">Diseño y dibujo automatico de columnas</h3>
+                <h6 class="project-lenguaje">C#</h6>
+                <p class="project-date"><small> <strong>Fecha:</strong> 27/12/2019</small> </p>
+                <p class="url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
+                <p class="project-description">Programa para el diseño, despiece y dibujo autmatico de columnas
+                    <br> siguiendo todos los parametros de la NSR10</p>
+            </div>
+            <figure class="project-image-container">
+                <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
+            </figure>
+        </article>
+        <article class="Ayuda_Etabs">
+            <div class="project-details">
+                <h3 class="project-title">Ayuda Etabs 2016</h3>
+                <h6 class="project-lenguaje">C#</h6>
+                <p class="project-date"><small> <strong>Fecha:</strong> 27/12/2019</small> </p>
+                <p class="url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
+                <p class="project-description">Plugin para Etabs V13 en adelante, que optimiza los tiempos de
+                    modelamiento, analisis y post-procesamiento de las estructruras</p>
+            </div>
+            <figure class="project-image-container">
+                <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
+            </figure>
+        </article>
+    </section>
+    <section id="experiencia" class="experience">
+        <!--Sección eventos-->
+        <h2 class="experience-title">Más sobre mi experiencia</h2>
+        <article class="experience-event">
+            <figure class="experience-image-container">
+                <img class="experience-image" src="images/platzi-conf.jpg" alt="Platziconf" width="500" />
+            </figure>
+            <h3 class="experience-title">Platziconf Mexico</h3>
+            <p class="experience-description">El evento más grande sobre gente que quiere aprender más de internet</p>
+            <a class="experience-url" href="https://www.youtube.com/watch?v=c4yiewZeiac" target="_blank">Ver plática</a>
+        </article>
+    </section>
+    <section id="Contacto" class="Contact">
+        <form action="/suscripcion/" class="form-email">
+            <h3>¿Creamos algo juntos?</h3>
+            <input type="email" placeholder="Déjame tu email" id="email">
+            <button>Enviar</button>
+        </form>
+    </section>
+    <footer class="footer">footer</footer>
+</body>
+
 </html>
