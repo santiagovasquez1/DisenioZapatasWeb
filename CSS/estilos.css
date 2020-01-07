@@ -225,32 +225,57 @@ figure {
     height: 150px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.social {
-    border: 1px solid red;
-}
+.social {}
 
 .social-link {
     display: inline-block;
     width: 50px;
     height: 50px;
-    border: 1px solid white;
+    background-size: 50px 50px;
+    margin: 0 10px;
 }
 
 .social-link.facebook {
     background-image: url('../images/facebook.svg');
-    background-size: 50px 50px;
 }
 
 .social-link.github {
     background-image: url('../images/github.svg');
-    background-size: 50px 50px;
 }
 
 .social-link.instagram {
     background-image: url('../images/instagram.svg');
-    background-size: 50px 50px;
+}
+
+.form-email input {
+    border-color: gray;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px 20px 10px 25px;
+    background-image: url('../images/envelope.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: center;
+}
+
+.form-email button {
+    padding: 10px 0px;
+    display: block;
+    margin-top: 10px;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+    /* margin: 10px auto 0; */
+}
+
+.form-email h3 {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 header a {
