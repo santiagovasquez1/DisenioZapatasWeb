@@ -38,108 +38,127 @@
 
     <header class="header">
         <!--Encabezado de la pagina web-->
+        <div class="Container">
+            <figure class="logo">
+                <img src="images/logo.png" alt="Imagen de portada">
+            </figure>
+            <nav class="menu">
+                <!--Menu de navegacion dentro de nuestra pagina web-->
+                <ol>
+                    <!--Label para iniciar una lista ordenada dentro de la pagina-->
+                    <li>
+                        <a class="link" href="#portafolio">Portafolio</a>
+                        <!--Enlace a nueva pagina dentro de la pagina-->
+                    </li>
+                    <li>
+                        <a class="link" href="#experiencia">Experiencia</a>
+                        <!--Enlace a nueva pagina dentro de la pagina-->
+                    </li>
+                    <li>
+                        <a class="link" href="#Contacto">Trabajemos juntos</a>
+                        <!--Enlace a nueva pagina dentro de la pagina-->
+                    </li>
+                </ol>
+            </nav>
 
-        <figure class="logo">
-            <img src="images/logo.png" alt="Imagen de portada">
-        </figure>
-        <nav class="menu">
-            <!--Menu de navegacion dentro de nuestra pagina web-->
-            <ol>
-                <!--Label para iniciar una lista ordenada dentro de la pagina-->
-                <li>
-                    <a class="link" href="./portafolio/index.html">Portafolio</a>
-                    <!--Enlace a nueva pagina dentro de la pagina-->
-                </li>
-                <li>
-                    <a class="link" href="#experiencia">Experiencia</a>
-                    <!--Enlace a nueva pagina dentro de la pagina-->
-                </li>
-                <li>
-                    <a class="link" href="#Contacto">Trabajemos juntos</a>
-                    <!--Enlace a nueva pagina dentro de la pagina-->
-                </li>
-            </ol>
-        </nav>
+        </div>
 
     </header>
     <section class="hero">
         <!--Seccion principal-->
-        <h1>
-            <!--Titulo principal-->
-            Hola! Soy <strong>Santiago Vásquez <br> ingeniero civil</strong> con pasión por el <br> desarrollo de aplicaciones especializadas<br>para <strong>ingenieria civil</strong>
-        </h1>
-        <!--<img src="images/hero.jpg" alt="Imagen principipal" width="500" />-->
+        <div class="Container">
+            <h1>
+                <!--Titulo principal-->
+                Hola! Soy <strong>Santiago Vásquez <br> ingeniero civil</strong> con pasión por el <br> desarrollo de
+                aplicaciones especializadas<br>para <strong>ingenieria civil</strong>
+            </h1>
+            <img class="hero-image" src="../Curso_Desarrollo_Web/images/Santiago-Vasquez-Gomez.jpg" alt="Imagen principipal" width="300" height="300" />
+        </div>
     </section>
     <section id="portafolio" class="portfolio">
         <!--Sección portaforlio-->
-        <h2>Portafolio (Software de diseño)</h2>
-        <article class="project">
-            <div class="project-details">
-                <h3 class="project-title"> <strong>Diseño de muros de concreto</strong></h3>
-                <h6 class="project-lenguaje"><strong>Sistema operativo:</strong> Windows</h6>
-                <p class="project-date"><small> <strong>Fecha:</strong> 09/09/2019</small> </p>
-                <p class="project-url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
-                <p class="project-description">Programa para el diseño, despiece y dibujo autmatico de muros de concreto
-                    <br> siguiendo todos los parametros de la NSR10</p>
-            </div>
-            <figure class="project-image-container">
-                <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
-            </figure>
-        </article>
-        <article class="project">
-            <div class="project-details">
-                <h3 class="project-title"><strong>Diseño y dibujo automatico de columnas</strong></h3>
-                <h6 class="project-lenguaje"><strong>Sistema operativo:</strong> Windows</h6>
-                <p class="project-date"><small> <strong>Fecha:</strong> 27/12/2019</small> </p>
-                <p class="project-url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
-                <p class="project-description">Programa para el diseño, despiece y dibujo autmatico de columnas
-                    <br> siguiendo todos los parametros de la NSR10</p>
-            </div>
-            <figure class="project-image-container">
-                <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
-            </figure>
-        </article>
-        <article class="project">
-            <div class="project-details">
-                <h3 class="project-title"><strong>Ayuda Etabs 2016</strong></h3>
-                <h6 class="project-lenguaje"><strong>Sistema operativo:</strong> Windows</h6>
-                <p class="project-date"><small> <strong>Fecha:</strong> 27/12/2019</small> </p>
-                <p class="project-url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
-                <p class="project-description">Plugin para Etabs V13 en adelante, que optimiza los tiempos de modelamiento, analisis y post-procesamiento de las estructruras</p>
-            </div>
-            <figure class="project-image-container">
-                <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
-            </figure>
-        </article>
-    </section>
-    <h2 class="experience-title-h2">Más sobre mi experiencia</h2>
-    <section id="experiencia" class="experience">
-        <!--Sección eventos-->
-        <article class="experience-event">
-            <figure class="experience-image-container">
-                <img class="experience-image" src="images/platzi-conf.jpg" alt="Platziconf" width="500" />
-            </figure>
-            <div class="experience-details">
-                <h3 class="experience-title">Acerca de mi:</h3>
-                <p class="experience-description">Ingeniero Civil de la Universidad Nacional de Colombia, especialista de estructruras tambien de la Universidad Nacional de Colombia y actualmente curso una especilización en desarrollo de software en la Universidad de Medellín, cuento
-                    con 4 años de experiencia en el diseño de estructruras de concreto. </p>
-                <a class="experience-url" href="https://www.youtube.com/watch?v=c4yiewZeiac" target="_blank">Ver plática</a>
-            </div>
-        </article>
-    </section>
-    <section id="Contacto" class="Contact">
-        <form action="/suscripcion/" class="form-email">
-            <h3>¿Creamos algo juntos?</h3>
-            <input type="email" placeholder="Déjame tu email" id="email">
-            <button>Enviar</button>
-        </form>
-        <div class="social">
-            <a href="https://www.facebook.com/santiago.vasquezgomez" class="social-link facebook"></a>
-            <a href="https://github.com/santiagovasquez1" class="social-link github"></a>
-            <a href="https://www.instagram.com/santiagovasquezgomez/" class="social-link instagram"></a>
+        <div class="Container">
+            <h2>Portafolio (Software de diseño)</h2>
+            <article class="project">
+                <div class="project-details">
+                    <h3 class="project-title"> <strong>Diseño de muros de concreto</strong></h3>
+                    <h6 class="project-lenguaje"><strong>Sistema operativo:</strong> Windows</h6>
+                    <p class="project-date"><small> <strong>Fecha:</strong> 09/09/2019</small> </p>
+                    <p class="project-url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
+                    <p class="project-description">Programa para el diseño, despiece y dibujo autmatico de muros de
+                        concreto
+                        <br> siguiendo todos los parametros de la NSR10</p>
+                </div>
+                <figure class="project-image-container">
+                    <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
+                </figure>
+            </article>
+            <article class="project">
+                <div class="project-details">
+                    <h3 class="project-title"><strong>Diseño y dibujo automatico de columnas</strong></h3>
+                    <h6 class="project-lenguaje"><strong>Sistema operativo:</strong> Windows</h6>
+                    <p class="project-date"><small> <strong>Fecha:</strong> 27/12/2019</small> </p>
+                    <p class="project-url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
+                    <p class="project-description">Programa para el diseño, despiece y dibujo autmatico de columnas
+                        <br> siguiendo todos los parametros de la NSR10</p>
+                </div>
+                <figure class="project-image-container">
+                    <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
+                </figure>
+            </article>
+            <article class="project">
+                <div class="project-details">
+                    <h3 class="project-title"><strong>Ayuda Etabs 2016</strong></h3>
+                    <h6 class="project-lenguaje"><strong>Sistema operativo:</strong> Windows</h6>
+                    <p class="project-date"><small> <strong>Fecha:</strong> 27/12/2019</small> </p>
+                    <p class="project-url"> <small> <strong>Puedes verlo en :</strong> www.platzi.com.co</small> </p>
+                    <p class="project-description">Plugin para Etabs V13 en adelante, que optimiza los tiempos de
+                        modelamiento, analisis y post-procesamiento de las estructruras</p>
+                </div>
+                <figure class="project-image-container">
+                    <img class="project-image" src="images/platzi-video-react-native.png" alt="React js" width="500">
+                </figure>
+            </article>
         </div>
     </section>
-    <footer class="footer">footer</footer>
+    <div class="Container">
+            <h2 class="experience-title-h2">Más sobre mi experiencia</h2>
+    </div>    
+    <section id="experiencia" class="experience">
+        <div class="Container">
+            <!--Sección eventos-->
+            <article class="experience-event">
+                <figure class="experience-image-container">
+                    <img class="experience-image" src="images/platzi-conf.jpg" alt="Platziconf" width="500" />
+                </figure>
+                <div class="experience-details">
+                    <h3 class="experience-title">Acerca de mi:</h3>
+                    <p class="experience-description">Ingeniero Civil de la Universidad Nacional de Colombia,
+                        especialista
+                        de estructruras tambien de la Universidad Nacional de Colombia y actualmente curso una
+                        especilización en desarrollo de software en la Universidad de Medellín, cuento
+                        con 4 años de experiencia en el diseño de estructruras de concreto. </p>
+                    <a class="experience-url" href="https://www.youtube.com/watch?v=c4yiewZeiac" target="_blank">Ver
+                        plática</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section id="Contacto" class="Contact">
+        <div class="Container">
+            <form action="/suscripcion/" class="form-email">
+                <h3>¿Creamos algo juntos?</h3>
+                <input type="email" placeholder="Déjame tu email" id="email">
+                <button>Enviar</button>
+            </form>
+            <div class="social">
+                <a href="https://www.facebook.com/santiago.vasquezgomez" class="social-link facebook"></a>
+                <a href="https://github.com/santiagovasquez1" class="social-link github"></a>
+                <a href="https://www.instagram.com/santiagovasquezgomez/" class="social-link instagram"></a>
+            </div>
+        </div>
+    </section>
+    <!-- <footer class="footer">footer</footer> -->
 </body>
 
 </html>

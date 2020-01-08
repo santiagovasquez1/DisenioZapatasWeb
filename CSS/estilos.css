@@ -6,7 +6,6 @@ propiedades
 valores
 */
 
-
 /* Selector de etiqueta header -section -article -nav*/
 
 body {
@@ -14,12 +13,7 @@ body {
     margin: 0px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Fjalla One'sans-serif;
     font-weight: normal;
 }
@@ -59,10 +53,17 @@ h6 strong {
 .hero {
     /* height: 300px; */
     background-color: #1b2127;
-    background-image: url('../images/Santiago-Vasquez-Gomez.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-image: url('../images/Santiago-Vasquez-Gomez.jpg');
     background-size: 300px 300px;
     background-repeat: no-repeat;
-    background-position-x: right;
+    background-position-x: right; */
+}
+
+.hero-image{
+    object-fit: cover;
 }
 
 #portafolio {
@@ -94,16 +95,13 @@ h6 strong {
     font-family: 'Fjalla One'sans-serif;
 }
 
-.project-lenguaje,
-.project-date,
-.project-url {
+.project-lenguaje, .project-date, .project-url {
     margin: 10px 0px;
 }
 
 .project-description {
     font-size: 20px;
 }
-
 
 /* .project-date{
     margin: 10px 0;
@@ -150,8 +148,7 @@ h6 strong {
     padding: 0 10px;
 }
 
-ol,
-ul {
+ol, ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -160,7 +157,6 @@ ul {
 figure {
     margin: 0;
 }
-
 
 /* .flexbox {
     display: flex;
@@ -177,6 +173,7 @@ figure {
 
 .experience {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .experience-event {
@@ -281,4 +278,15 @@ figure {
 header a {
     color: white;
     text-decoration: none;
+}
+
+.Container {
+    /* border: 1px solid red; */
+    width: 1000px;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
 }
