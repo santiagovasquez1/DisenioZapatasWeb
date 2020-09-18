@@ -12,7 +12,8 @@ export class Zapata {
   espesorZapata: number;
   areaNecesaria: number;
   pesoZapata: number;
-
+  fc: number;
+  recubrimiento: number;
 
   constructor(sigmaAdmi: number, gammaConcreto: number) {
     this.PresionAdmisible = sigmaAdmi;
