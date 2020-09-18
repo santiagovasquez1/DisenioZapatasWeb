@@ -1,3 +1,4 @@
+import { ETipoColumna } from './e-tipo-columna.enum';
 export class Zapata {
 
   PresionAdmisible: number;
@@ -14,6 +15,7 @@ export class Zapata {
   pesoZapata: number;
   fc: number;
   recubrimiento: number;
+  tipoColumna: ETipoColumna;
 
   constructor(sigmaAdmi: number, gammaConcreto: number) {
     this.PresionAdmisible = sigmaAdmi;

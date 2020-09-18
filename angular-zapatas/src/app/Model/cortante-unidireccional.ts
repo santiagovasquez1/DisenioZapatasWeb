@@ -10,6 +10,10 @@ export class CortanteUnidireccional implements IChequeo {
   qMax: number;
   phiVc: number;
 
+  constructor(zapatai: Zapata) {
+    this.zapata = zapatai;
+  }
+
   private calcVu(ladoZapata: number, ladoColumna: number) {
     const a = this.zapata.espesorZapata - this.zapata.recubrimiento;
     const vu = this.qMax * ladoZapata * 1.4 * ((ladoZapata / 2) - (ladoColumna / 2) - a);
@@ -23,7 +27,6 @@ export class CortanteUnidireccional implements IChequeo {
 
   private calcEsfuerzoCortante(lado: number, vu: number): number {
     const esfVu = vu / (lado * this.zapata.espesorZapata - this.zapata.recubrimiento);
-
     return esfVu;
   }
 
