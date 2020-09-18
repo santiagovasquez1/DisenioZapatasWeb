@@ -1,4 +1,6 @@
+import { Zapata } from './../Model/zapata';
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-zapata',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZapataComponent implements OnInit {
 
+  @Input() zapata: Zapata;
   constructor() { }
 
   ngOnInit(): void {
