@@ -1,3 +1,4 @@
+import { Zapata } from './../Model/zapata';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaZapatasComponent implements OnInit {
 
-  constructor() { }
+  zapatas: Zapata[];
+
+  constructor() {
+    this.zapatas = [];
+  }
 
   ngOnInit(): void {
   }
 
+  guardar(presionAdmisible: number, gammaConcreto: number, pServ: number, mxServ: number, myServ: number): boolean {
+
+    const zapata = new Zapata(presionAdmisible, gammaConcreto);
+
+    zapata.P = pServ;
+    zapata.mx = mxServ;
+    zapata.my = myServ;
+
+    this.zapatas.push(zapata);
+    console.log(this.zapatas);
+    return false;
+  }
 }

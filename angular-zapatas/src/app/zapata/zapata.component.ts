@@ -1,5 +1,5 @@
 import { Zapata } from './../Model/zapata';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 
 @Component({
@@ -10,6 +10,7 @@ import { Input } from '@angular/core';
 export class ZapataComponent implements OnInit {
 
   @Input() zapata: Zapata;
+  @HostBinding('attr.class') cssClass = 'col-md-8';
   constructor() { }
 
   ngOnInit(): void {

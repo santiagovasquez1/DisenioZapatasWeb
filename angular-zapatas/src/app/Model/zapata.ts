@@ -14,6 +14,9 @@ export class Zapata {
   pesoZapata: number;
 
 
-  constructor() { }
+  constructor(sigmaAdmi: number, gammaConcreto: number) {
+    this.PresionAdmisible = sigmaAdmi;
+    this.GammaConcreto = gammaConcreto;
+  }
 
 }
