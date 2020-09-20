@@ -1,22 +1,126 @@
-<div class="card-content">
-    <div class="card-desc">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Sigma admi (tonf/m²)</th>
-                    <th scope="col">Gamma Conreto (tonf/m³)</th>
-                    <th scope="col">P (Tonf)</th>
-                    <th scope="col">Mx (Tonf/m)</th>
-                    <th scope="col">My (Tonf/m)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <td>{{zapata.PresionAdmisible}}</td>
-                <td>{{zapata.GammaConcreto}}</td>
-                <td>{{zapata.P}}</td>
-                <td>{{zapata.mx}}</td>
-                <td>{{zapata.my}}</td>
-            </tbody>
-        </table>
+<div class="container content">
+    <div class="row">
+        <div class="col-md-8 offset-md3">
+            <!-- form card login with zapata inputs -->
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Datos de entrada</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="presionAdmin">Presión admisible (Tonf/m²) </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="presionAdmin"
+                                    placeholder="Ingrese la presión admisible del suelo" #presionAdmisible>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="gammaConcreto">Densidad del concreto (Tonf/m³)</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="gammaConcreto"
+                                    placeholder="Ingrese la densidad del concreto" #gammaConcreto>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="pServ">P (Tonf)</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="pServ"
+                                    placeholder="Ingrese la carga axial que baja por la zapata" #pServ>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="mxServ">Mx (Tonf/m)</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="mxServ"
+                                    placeholder="Ingrese el momento en dirección X de la zapata" #mxServ>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="myServ">My (Tonf/m)</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="myServ"
+                                    placeholder="Ingrese el momento en dirección Y de la zapata" #myServ>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-header">
+                    <h3 class="mb-0">Propiedades Zapata</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="lxCol">Lado X de la columnas(m) </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="lxCol"
+                                    placeholder="Ingrese la dimension de la columna en sentido X" #lxCol>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="lyCol">Lado Y de la columnas(m) </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="lyCol"
+                                    placeholder="Ingrese la dimension de la columna en sentido Y" #lyCol>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="rzapata">Recubrimiento de la zapata(m) </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="rzapata"
+                                    placeholder="Ingrese el recubrimiento de la zapata" #rzapata>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="ezap">Espesor de la zapata(m) </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="ezap"
+                                    placeholder="Ingrese el espesor de la zapata" #ezapata>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="lxZap">Lado X de la Zapata(m) </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="lxZap"
+                                    placeholder="Ingrese la dimension de la zapata en sentido X" #lxZap>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="lyZap">Lado Y de la Zapata(m) </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="lyZap"
+                                    placeholder="Ingrese la dimension de la zapata en sentido Y" #lyZap>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Chequeo Zapata</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
