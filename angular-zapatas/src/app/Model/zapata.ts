@@ -17,9 +17,11 @@ export class Zapata {
   recubrimiento: number;
   tipoColumna: ETipoColumna;
 
-  constructor(sigmaAdmi: number, gammaConcreto: number) {
+  constructor(sigmaAdmi: number, gammaConcreto: number, fc: number, recubrimiento: number) {
     this.PresionAdmisible = sigmaAdmi;
     this.GammaConcreto = gammaConcreto;
+    this.fc = fc;
+    this.recubrimiento = recubrimiento;
   }
 
 }
