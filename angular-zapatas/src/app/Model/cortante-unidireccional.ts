@@ -38,7 +38,7 @@ export class CortanteUnidireccional implements IChequeo {
     this.euY = this.calcEsfuerzoCortante(this.zapata.ladoxZap, this.vuY);
   }
 
-  mensajeChqueo(): string {
+  mensajeChequeo(): string {
     const euMax = Math.max(this.euX, this.euY);
 
     if (euMax / 10 > this.phiVc) {

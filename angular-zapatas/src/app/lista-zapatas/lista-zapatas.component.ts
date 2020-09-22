@@ -19,14 +19,14 @@ export class ListaZapatasComponent implements OnInit {
 
   guardar(presionAdmisible: number, gammaConcreto: number, pServ: number, mxServ: number, myServ: number): boolean {
 
-    const zapata = new Zapata(presionAdmisible, gammaConcreto);
+    // const zapata = new Zapata(presionAdmisible, gammaConcreto);
 
-    zapata.P = pServ;
-    zapata.mx = mxServ;
-    zapata.my = myServ;
+    // zapata.P = pServ;
+    // zapata.mx = mxServ;
+    // zapata.my = myServ;
 
-    this.zapatas.push(zapata);
-    console.log(this.zapatas);
+    // this.zapatas.push(zapata);
+    // console.log(this.zapatas);
     return false;
   }
 }

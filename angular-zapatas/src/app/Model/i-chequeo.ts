@@ -3,5 +3,5 @@ export interface IChequeo {
 
   zapata: Zapata;
   Ejecutar(): void;
-  mensajeChqueo(): string;
+  mensajeChequeo(): string;
 }
