@@ -1,4 +1,3 @@
-import { ok } from 'assert';
 import { ETipoColumna } from './e-tipo-columna.enum';
 import { IChequeo } from './i-chequeo';
 import { Zapata } from './zapata';

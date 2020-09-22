@@ -14,8 +14,8 @@ import { IChequeo } from '../Model/i-chequeo';
 export class ZapataComponent implements OnInit {
 
   zapata: Zapata;
-  areaReal = 0;
-  areaNecesario = 0;
+  @Input() areaReal = 0;
+  @Input() areaNecesario = 0;
   @HostBinding('attr.class') cssClass = 'col-md-8';
   fg: FormGroup;
 
@@ -44,8 +44,8 @@ export class ZapataComponent implements OnInit {
   }
 
   chequeoZapata(presionAdmisible: number, gammaConcreto: number, pServ: number,
-    mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
-    rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
+                mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
+                rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
 
     this.zapata = new Zapata(presionAdmisible, gammaConcreto,
       pServ, mxServ, myServ, fcZap, lxCol, lyCol,
@@ -69,12 +69,4 @@ export class ZapataComponent implements OnInit {
       return null;
     };
   }
-
-  // zapataValidator(control: FormControl): { [s: string]: boolean } {
-
-  //   if ()
-
-  //     return null;
-  // }
-
 }

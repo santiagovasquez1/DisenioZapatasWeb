@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ZapataComponent } from './zapata/zapata.component';
 import { ListaZapatasComponent } from './lista-zapatas/lista-zapatas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EsfuerzoZapataComponent } from './esfuerzo-zapata/esfuerzo-zapata.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ZapataComponent,
-    ListaZapatasComponent
+    ListaZapatasComponent,
+    EsfuerzoZapataComponent
   ],
   imports: [
     BrowserModule,

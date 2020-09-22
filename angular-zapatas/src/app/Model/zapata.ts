@@ -19,8 +19,8 @@ export class Zapata {
   tipoColumna: ETipoColumna;
 
   constructor(presionAdmisible: number, gammaConcreto: number, pServ: number,
-    mxServ: number, myServ: number, fcZap: number, lxCol: number,
-    lyCol: number, rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
+              mxServ: number, myServ: number, fcZap: number, lxCol: number,
+              lyCol: number, rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
 
     this.PresionAdmisible = presionAdmisible;
     this.GammaConcreto = gammaConcreto;
