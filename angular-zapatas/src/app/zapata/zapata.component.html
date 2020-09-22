@@ -114,8 +114,9 @@
                                 <input type="number" class="form-control " id="lyZap " placeholder="Ingrese la dimension de la zapata en sentido Y " [formControl]="fg.controls['lyZap']">
                             </div>
                         </div>
-                        <p class="text-info" *ngIf="!fg.valid">Ingrese todos los parametros para continuar</p>
+                        <p class="text-info text-justify text-lg-center" *ngIf="!fg.valid">Ingrese todos los parametros para continuar</p>
                         <button class="btn btn-primary btn-lg btn-block " type="submit" *ngIf="fg.valid">Chequeo Zapata</button>
+                        <p class="text-info text-justify text-lg-center" *ngIf="zapata.areaReal<zapata.areaNecesaria">Area real: {{zapata.areaReal}} menor que area requerida: {{zapata.areaNecesaria}}</p>
                     </form>
                 </div>
             </div>
