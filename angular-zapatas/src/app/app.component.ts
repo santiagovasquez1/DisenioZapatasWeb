@@ -1,3 +1,5 @@
+import { Zapata } from './Model/zapata';
+import { DataService } from './services/data-service.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-zapatas';
+
+  constructor(public dataService: DataService) {
+
+  }
+  RecibirZapata(zapatai: Zapata) {
+    this.dataService.zapataGobal = zapatai;
+  }
 }

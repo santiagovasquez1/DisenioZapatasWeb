@@ -12,6 +12,7 @@ export class EsfuerzoZapata implements IChequeo {
   qMax: number;
 
   constructor(zapatai: Zapata) {
+
     this.zapata = zapatai;
   }
 

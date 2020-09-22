@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
 import { ETipoColumna } from './e-tipo-columna.enum';
-@Injectable()
+
 export class Zapata {
 
   PresionAdmisible: number;
@@ -20,22 +19,8 @@ export class Zapata {
   recubrimiento: number;
   tipoColumna: ETipoColumna;
 
-  constructor(presionAdmisible: number, gammaConcreto: number, pServ: number,
-              mxServ: number, myServ: number, fcZap: number, lxCol: number,
-              lyCol: number, rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
+  constructor() {
 
-    this.PresionAdmisible = presionAdmisible;
-    this.GammaConcreto = gammaConcreto;
-    this.P = pServ;
-    this.mx = mxServ;
-    this.my = myServ;
-    this.fc = fcZap;
-    this.lxCol = lxCol;
-    this.lyCol = lyCol;
-    this.recubrimiento = rZapata;
-    this.espesorZapata = eZapata;
-    this.ladoxZap = lxZap;
-    this.ladoyZap = lyZap;
   }
 
   setAreaNecesaria() {

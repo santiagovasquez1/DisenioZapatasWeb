@@ -16,8 +16,14 @@
                         <th class="text-center align-text-top" scope="col">Qmax (tf/m²)</th>
                     </tr>
                 </thead>
-                <tbody>
-
+                <tbody *ngIf="zapataHijo!=null">
+                    <td>{{esfuerzoZapata.exZapata}}</td>
+                    <td>{{esfuerzoZapata.eyZapata}}</td>
+                    <td>{{esfuerzoZapata.qMaxX}}</td>
+                    <td>{{esfuerzoZapata.qMinX}}</td>
+                    <td>{{esfuerzoZapata.qMaxY}}</td>
+                    <td>{{esfuerzoZapata.qMiny}}</td>
+                    <td>{{esfuerzoZapata.qMax}}</td>
                 </tbody>
             </table>
 

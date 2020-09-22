@@ -1,4 +1,3 @@
-import { Zapata } from './Model/zapata';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -22,7 +21,7 @@ import { EsfuerzoZapataComponent } from './esfuerzo-zapata/esfuerzo-zapata.compo
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [Zapata],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
