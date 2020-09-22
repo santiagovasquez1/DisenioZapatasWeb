@@ -46,9 +46,6 @@ export class ZapataComponent implements OnInit {
       rZapata, eZapata, lxZap, lyZap);
     console.log('Se creo la zapata');
 
-    const chequeoUni: IChequeo = new CortanteUnidireccional(this.zapata);
-    chequeoUni.Ejecutar();
-    chequeoUni.mensajeChequeo();
   }
 
   // zapataValidator(control: FormControl): { [s: string]: boolean } {
