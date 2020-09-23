@@ -6,6 +6,7 @@ import { Component, HostBinding, OnInit, Output, EventEmitter } from '@angular/c
 import { Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidatorFn, Validators, ReactiveFormsModule } from '@angular/forms';
 import { IChequeo } from '../Model/i-chequeo';
+import { eTipoCalculo } from '../services/e-tipoCalculo';
 
 @Component({
   selector: 'app-zapata',
@@ -71,10 +72,12 @@ export class ZapataComponent implements OnInit {
 
     this.areaNecesario = this.zapata.areaNecesaria;
     this.areaReal = this.zapata.areaReal;
-    console.log(this.zapata);
 
     this.enviarZapata.emit(this.zapata);
-    this.dataServie.zapataGobal = this.zapata;
+    this.dataServie.zapata = this.zapata;
+    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Esfuerzo);
+    console.log(this.dataServie.zapata);
+    console.log(this.dataServie.esfuerzoZapata);
     return false;
   }
 

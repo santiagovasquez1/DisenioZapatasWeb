@@ -10,10 +10,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-zapatas';
 
-  constructor(public dataService: DataService) {
+  constructor() {
 
   }
-  RecibirZapata(zapatai: Zapata) {
-    this.dataService.zapataGobal = zapatai;
-  }
+
 }

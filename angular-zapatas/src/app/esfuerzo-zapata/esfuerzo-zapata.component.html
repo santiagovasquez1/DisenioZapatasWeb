@@ -16,7 +16,7 @@
                         <th class="text-center align-text-top" scope="col">Qmax (tf/m²)</th>
                     </tr>
                 </thead>
-                <tbody *ngIf="zapataHijo!=null">
+                <tbody>
                     <td>{{esfuerzoZapata.exZapata.toFixed(2)}}</td>
                     <td>{{esfuerzoZapata.eyZapata.toFixed(2)}}</td>
                     <td>{{esfuerzoZapata.qMaxX.toFixed(2)}}</td>
@@ -26,7 +26,6 @@
                     <td>{{esfuerzoZapata.qMax.toFixed(2)}}</td>
                 </tbody>
             </table>
-            <button class="btn btn-primary" type="submit" (click)="recibirZapata()">Calcular</button>
         </div>
     </div>
 </div>

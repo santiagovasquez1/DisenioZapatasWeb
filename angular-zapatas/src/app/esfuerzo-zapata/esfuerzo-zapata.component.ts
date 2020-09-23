@@ -12,28 +12,22 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
 export class EsfuerzoZapataComponent implements OnInit {
 
   @HostBinding('attr.class') cssClass = 'col-md-8';
-  @Input() zapataHijo: Zapata;
 
-  @Input() private _zapataEjemplo: Zapata = null;
-  get zapataEjemplo() {
-    return this._zapataEjemplo;
-  }
-  set zapataEjemplo(zapatai: Zapata) {
-    this._zapataEjemplo = zapatai;
-    this.recibirZapata();
-  }
   esfuerzoZapata: EsfuerzoZapata;
+  prueba: string[];
 
   constructor(public dataService: DataService) {
-
+    this.prueba = [];
+    this.dataService.subscribeOnChange((e: EsfuerzoZapata) => {
+      if (e != null) {
+        this.esfuerzoZapata = this.dataService.esfuerzoZapata;
+        this.prueba.push('Funcionando');
+      }
+    });
   }
 
   ngOnInit(): void {
 
   }
 
-  recibirZapata() {
-    this.esfuerzoZapata = new EsfuerzoZapata(this.zapataHijo);
-    this.esfuerzoZapata.Ejecutar();
-  }
 }

@@ -1,5 +1,7 @@
+import { DataService } from './services/data-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +9,11 @@ import { ZapataComponent } from './zapata/zapata.component';
 import { ListaZapatasComponent } from './lista-zapatas/lista-zapatas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EsfuerzoZapataComponent } from './esfuerzo-zapata/esfuerzo-zapata.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: ZapataComponent },
+];
 
 @NgModule({
   declarations: [
@@ -19,9 +26,10 @@ import { EsfuerzoZapataComponent } from './esfuerzo-zapata/esfuerzo-zapata.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
