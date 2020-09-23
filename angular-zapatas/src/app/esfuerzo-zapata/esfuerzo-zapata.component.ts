@@ -13,6 +13,15 @@ export class EsfuerzoZapataComponent implements OnInit {
 
   @HostBinding('attr.class') cssClass = 'col-md-8';
   @Input() zapataHijo: Zapata;
+
+  @Input() private _zapataEjemplo: Zapata = null;
+  get zapataEjemplo() {
+    return this._zapataEjemplo;
+  }
+  set zapataEjemplo(zapatai: Zapata) {
+    this._zapataEjemplo = zapatai;
+    this.recibirZapata();
+  }
   esfuerzoZapata: EsfuerzoZapata;
 
   constructor(public dataService: DataService) {
@@ -23,7 +32,8 @@ export class EsfuerzoZapataComponent implements OnInit {
 
   }
 
-  recibirZapata(){
-
+  recibirZapata() {
+    this.esfuerzoZapata = new EsfuerzoZapata(this.zapataHijo);
+    this.esfuerzoZapata.Ejecutar();
   }
 }

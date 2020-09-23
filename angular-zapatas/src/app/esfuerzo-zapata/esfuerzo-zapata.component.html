@@ -17,16 +17,16 @@
                     </tr>
                 </thead>
                 <tbody *ngIf="zapataHijo!=null">
-                    <td>{{esfuerzoZapata.exZapata}}</td>
-                    <td>{{esfuerzoZapata.eyZapata}}</td>
-                    <td>{{esfuerzoZapata.qMaxX}}</td>
-                    <td>{{esfuerzoZapata.qMinX}}</td>
-                    <td>{{esfuerzoZapata.qMaxY}}</td>
-                    <td>{{esfuerzoZapata.qMiny}}</td>
-                    <td>{{esfuerzoZapata.qMax}}</td>
+                    <td>{{esfuerzoZapata.exZapata.toFixed(2)}}</td>
+                    <td>{{esfuerzoZapata.eyZapata.toFixed(2)}}</td>
+                    <td>{{esfuerzoZapata.qMaxX.toFixed(2)}}</td>
+                    <td>{{esfuerzoZapata.qMinX.toFixed(2)}}</td>
+                    <td>{{esfuerzoZapata.qMaxY.toFixed(2)}}</td>
+                    <td>{{esfuerzoZapata.qMiny.toFixed(2)}}</td>
+                    <td>{{esfuerzoZapata.qMax.toFixed(2)}}</td>
                 </tbody>
             </table>
-
+            <button class="btn btn-primary" type="submit" (click)="recibirZapata()">Calcular</button>
         </div>
     </div>
 </div>
