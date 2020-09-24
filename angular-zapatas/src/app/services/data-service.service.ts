@@ -30,13 +30,13 @@ export class DataService {
         break;
       }
       case eTipoCalculo.Unidireccional: {
-        this.cortanteUnidireccional = new CortanteUnidireccional(z);
+        this.cortanteUnidireccional = new CortanteUnidireccional(z, this.esfuerzoZapata.qMax);
         this.cortanteUnidireccional.Ejecutar();
         this.current.next(this.cortanteUnidireccional);
         break;
       }
       default: {
-        this.cortanteBidireccional = new CortanteBidireccional(z);
+        this.cortanteBidireccional = new CortanteBidireccional(z, this.esfuerzoZapata.qMax);
         this.cortanteBidireccional.Ejecutar();
         this.current.next(this.cortanteBidireccional);
         break;

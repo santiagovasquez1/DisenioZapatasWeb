@@ -11,8 +11,9 @@ export class CortanteBidireccional implements IChequeo {
   phiVcDef: number;
   qMax: number;
 
-  constructor(zapatai: Zapata) {
+  constructor(zapatai: Zapata, qmax: number) {
     this.zapata = zapatai;
+    this.qMax = qmax;
   }
 
   private calculoPhiVc1(): number {

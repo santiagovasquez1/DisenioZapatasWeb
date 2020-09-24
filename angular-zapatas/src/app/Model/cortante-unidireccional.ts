@@ -10,13 +10,15 @@ export class CortanteUnidireccional implements IChequeo {
   qMax: number;
   phiVc: number;
 
-  constructor(zapatai: Zapata) {
+  constructor(zapatai: Zapata, qmax: number) {
     this.zapata = zapatai;
+    this.qMax = qmax;
   }
 
-  private calcVu(ladoZapata: number, ladoColumna: number) {
+  private calcVu(ladoZapata1: number, ladoZapata2: number, ladoColumna: number) {
     const a = this.zapata.espesorZapata - this.zapata.recubrimiento;
-    const vu = this.qMax * ladoZapata * 1.4 * ((ladoZapata / 2) - (ladoColumna / 2) - a);
+    const b = (ladoZapata1 / 2) - (ladoColumna / 2);
+    const vu = this.qMax * ladoZapata2 * 1.4 * (b - a);
     return vu;
   }
 
@@ -26,14 +28,15 @@ export class CortanteUnidireccional implements IChequeo {
   }
 
   private calcEsfuerzoCortante(lado: number, vu: number): number {
-    const esfVu = vu / (lado * this.zapata.espesorZapata - this.zapata.recubrimiento);
+    const a = this.zapata.espesorZapata - this.zapata.recubrimiento;
+    const esfVu = vu / (lado * a);
     return esfVu;
   }
 
   Ejecutar(): void {
     this.phiVc = this.calcPhiVc(this.zapata.fc);
-    this.vuX = this.calcVu(this.zapata.ladoxZap, this.zapata.lxCol);
-    this.vuY = this.calcVu(this.zapata.ladoyZap, this.zapata.lyCol);
+    this.vuX = this.calcVu(this.zapata.ladoxZap, this.zapata.ladoyZap, this.zapata.lxCol);
+    this.vuY = this.calcVu(this.zapata.ladoyZap, this.zapata.ladoxZap, this.zapata.lyCol);
     this.euX = this.calcEsfuerzoCortante(this.zapata.ladoyZap, this.vuX);
     this.euY = this.calcEsfuerzoCortante(this.zapata.ladoxZap, this.vuY);
   }
