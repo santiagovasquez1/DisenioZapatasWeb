@@ -23,8 +23,8 @@ export class EsfuerzoZapata implements IChequeo {
     this.eyZapata = this.calculoExcentricidad(this.zapata.my, fExt);
     this.qMaxX = this.calcQMax(this.exZapata, fExt, this.zapata.mx, this.zapata.ladoxZap, this.zapata.ladoyZap);
     this.qMinX = this.calcQmin(this.exZapata, fExt, this.zapata.mx, this.zapata.ladoxZap, this.zapata.ladoyZap);
-    this.qMaxY = this.calcQMax(this.eyZapata, fExt, this.zapata.mx, this.zapata.ladoyZap, this.zapata.ladoxZap);
-    this.qMiny = this.calcQmin(this.eyZapata, fExt, this.zapata.mx, this.zapata.ladoyZap, this.zapata.ladoxZap);
+    this.qMaxY = this.calcQMax(this.eyZapata, fExt, this.zapata.my, this.zapata.ladoyZap, this.zapata.ladoxZap);
+    this.qMiny = this.calcQmin(this.eyZapata, fExt, this.zapata.my, this.zapata.ladoyZap, this.zapata.ladoxZap);
     this.qMax = Math.max(this.qMaxX, this.qMaxY, this.qMinX, this.qMiny);
   }
   mensajeChequeo(): string {
