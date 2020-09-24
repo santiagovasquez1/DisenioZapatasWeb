@@ -1,13 +1,15 @@
-<div class="row justify-content-center no-gutters">
-    <div class="col">
-        <div class="container content">
-            <!-- form card login with zapata inputs -->
-            <div class="card card-outline-secondary">
-                <div class="card-header">
-                    <h3 class="mb-0">Datos de entrada</h3>
-                </div>
-                <div class="card-body">
-                    <form [formGroup]="fg">
+<div class="container content">
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+            <h3 class="mb-0">Datos de entrada zapata</h3>
+        </div>
+        <div class="container content mt-3 mb-3">
+            <form [formGroup]="fg" (ngSubmit)="chequeoZapata(fg.controls['presionAdmisible'].value, fg.controls['gammaConcreto'].value,
+                               fg.controls['pServ'].value, fg.controls['mxServ'].value, fg.controls['myServ'].value, fg.controls['fcZap'].value,
+                               fg.controls['lxCol'].value,fg.controls['lyCol'].value,fg.controls['rZapata'].value,fg.controls['eZapata'].value,
+                               fg.controls['lxZap'].value, fg.controls['lyZap'].value )">
+                <div class="row row-flex">
+                    <div class="col">
                         <div class="form-group row">
                             <div class="col-md-4">
                                 <label for="presionAdmin">Presión admisible (Tonf/m²) </label>
@@ -48,16 +50,6 @@
                                 <input type="number" class="form-control " id="myServ " placeholder="Ingrese el momento en dirección Y de la zapata " [formControl]="fg.controls['myServ']">
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="card-header ">
-                    <h3 class="mb-0 ">Propiedades Zapata</h3>
-                </div>
-                <div class="card-body ">
-                    <form [formGroup]="fg" (ngSubmit)="chequeoZapata(fg.controls['presionAdmisible'].value, fg.controls['gammaConcreto'].value,
-                        fg.controls['pServ'].value, fg.controls['mxServ'].value, fg.controls['myServ'].value, fg.controls['fcZap'].value,
-                        fg.controls['lxCol'].value,fg.controls['lyCol'].value,fg.controls['rZapata'].value,fg.controls['eZapata'].value,
-                        fg.controls['lxZap'].value, fg.controls['lyZap'].value )">
                         <div class="form-group row ">
                             <div class="col-md-4 ">
                                 <label for="lxCol ">Lado X de la columnas(m) </label>
@@ -72,6 +64,21 @@
                             </div>
                             <div class="col-md-8 ">
                                 <input type="number" class="form-control " id="lyCol " placeholder="Ingrese la dimension de la columna en sentido Y " [formControl]="fg.controls['lyCol']">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group row">
+                            <div class="col-md-4 ">
+                                <label for="TipoColumna ">Tipo de columna</label>
+                            </div>
+                            <div class="col-md-8 ">
+                                <select class="form-control" id="tipoColumna" name="tipoColumna">
+                                  <option>Interna</option>
+                                  <option>Borde</option>
+                                  <option>Esquinera</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -114,12 +121,12 @@
                                 <input type="number" class="form-control " id="lyZap " placeholder="Ingrese la dimension de la zapata en sentido Y " [formControl]="fg.controls['lyZap']">
                             </div>
                         </div>
-                        <p class="text-info text-justify text-lg-center" *ngIf="!fg.valid">Ingrese todos los parametros para continuar</p>
-                        <button class="btn btn-primary btn-lg btn-block " type="submit" *ngIf="fg.valid">Chequeo Zapata</button>
-                        <p class="text-info text-justify text-lg-center" *ngIf="zapata.areaReal<zapata.areaNecesaria">Area real: {{zapata.areaReal}} menor que area requerida: {{zapata.areaNecesaria}}</p>
-                    </form>
+                    </div>
                 </div>
-            </div>
+                <p class="text-info text-justify text-lg-center" *ngIf="!fg.valid">Ingrese todos los parametros para continuar</p>
+                <button class="btn btn-primary btn-lg btn-block " type="submit" *ngIf="fg.valid">Chequeo Zapata</button>
+                <p class="text-info text-justify text-lg-center" *ngIf="zapata.areaReal<zapata.areaNecesaria">Area real: {{zapata.areaReal}} menor que area requerida: {{zapata.areaNecesaria}}</p>
+            </form>
         </div>
     </div>
 </div>

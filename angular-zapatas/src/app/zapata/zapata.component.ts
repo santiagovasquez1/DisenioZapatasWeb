@@ -1,3 +1,4 @@
+import { ETipoColumna } from './../Model/e-tipo-columna.enum';
 import { DataService } from './../services/data-service.service';
 import { CortanteBidireccional } from './../Model/cortante-bidireccional';
 import { CortanteUnidireccional } from './../Model/cortante-unidireccional';
@@ -20,9 +21,11 @@ export class ZapataComponent implements OnInit {
   @Input() areaNecesario = 0;
   @HostBinding('attr.class') cssClass = 'col-md-8';
   @Output() enviarZapata: EventEmitter<Zapata>;
+  tipoColumna: any[];
   fg: FormGroup;
 
   constructor(fb: FormBuilder, private dataServie: DataService) {
+    this.tipoColumna = [];
     this.enviarZapata = new EventEmitter();
     this.fg = fb.group({
       presionAdmisible: ['', Validators.required],
@@ -45,11 +48,16 @@ export class ZapataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    for (let t in ETipoColumna) {
+      if (isNaN(Number(t))) {
+        this.tipoColumna.push({ text: t, value: ETipoColumna[t]});
+      }
+    }
   }
 
   chequeoZapata(presionAdmisible: number, gammaConcreto: number, pServ: number,
-    mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
-    rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
+                mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
+                rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
 
     this.zapata = new Zapata();
 
