@@ -141,7 +141,7 @@
                 </div>
                 <p class="text-info text-justify text-lg-center" *ngIf="!fg.valid">Ingrese todos los parametros para continuar</p>
                 <button class="btn btn-primary btn-lg btn-block " type="submit" *ngIf="fg.valid">Chequeo Zapata</button>
-                <p class="text-info text-justify text-lg-center" *ngIf="zapata.areaReal<zapata.areaNecesaria">Area real: {{zapata.areaReal}} menor que area requerida: {{zapata.areaNecesaria}}</p>
+                <p class="text-info text-justify text-lg-center" *ngIf="zapata.areaReal<zapata.areaNecesaria">Area real: {{zapata.areaReal.toFixed(2)}} menor que area requerida: {{zapata.areaNecesaria.toFixed(2)}}</p>
             </form>
         </div>
     </div>

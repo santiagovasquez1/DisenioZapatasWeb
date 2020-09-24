@@ -1,0 +1,27 @@
+<div class="container content">
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+            <h3 class="mb-0">Chequeo Cortante Bidireccional</h3>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center align-text-top" scope="col">vu (tf/m²)</th>
+                        <th class="text-center align-text-top" scope="col">Phi Vc1 (tf/m²)</th>
+                        <th class="text-center align-text-top" scope="col">Phi Vc2 (tf/m²)</th>
+                        <th class="text-center align-text-top" scope="col">Phi Vc3 (tf/m²)</th>
+                        <th class="text-center align-text-top" scope="col">Phi Vc Def (tf/m²)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td class="text-center">{{cortanteBidireccional.vu.toFixed(2)}}</td>
+                    <td class="text-center">{{cortanteBidireccional.phiVc1.toFixed(2)}}</td>
+                    <td class="text-center">{{cortanteBidireccional.phiVc2.toFixed(2)}}</td>
+                    <td class="text-center">{{cortanteBidireccional.phiVc3.toFixed(2)}}</td>
+                    <td class="text-center">{{cortanteBidireccional.phiVcDef.toFixed(2)}}</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

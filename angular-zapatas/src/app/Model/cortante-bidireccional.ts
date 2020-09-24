@@ -29,11 +29,8 @@ export class CortanteBidireccional implements IChequeo {
   private calculoPhiVc3(): number {
     const d = this.zapata.espesorZapata - this.zapata.recubrimiento;
     const b0 = (2 * (this.zapata.lxCol + d) + 2 * (this.zapata.lyCol + d)) * 100;
-    let asd = 0;
+    let asd = 40;
     switch (this.zapata.tipoColumna) {
-      case ETipoColumna.Interna:
-        asd = 40;
-        break;
       case ETipoColumna.Borde:
         asd = 30;
         break;
