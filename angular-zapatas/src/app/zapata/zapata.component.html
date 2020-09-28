@@ -6,23 +6,33 @@
         <div class="container content mt-3 mb-3">
             <div class="row row-flex">
                 <div class="col">
-                    <img src="./assets/seccionGeneral.JPG" class="img-thumbnail " alt="Seccion columna" width="300px" height="300px">
-                    <strong><p class="text-center">Sección General</p></strong>
+                    <img src="./assets/seccionGeneral.JPG" class="img-thumbnail " alt="Seccion columna" width="300px"
+                        height="300px">
+                    <strong>
+                        <p class="text-center">Sección General</p>
+                    </strong>
                 </div>
                 <div class="col">
-                    <img src="./assets/seccionColumna.JPG" class="img-thumbnail " alt="Seccion columna" width="300px" height="300px">
-                    <strong><p class="text-center">Sección Columna</p></strong>
+                    <img src="./assets/seccionColumna.JPG" class="img-thumbnail " alt="Seccion columna" width="300px"
+                        height="300px">
+                    <strong>
+                        <p class="text-center">Sección Columna</p>
+                    </strong>
                 </div>
                 <div class="col">
-                    <img src="./assets/seccionZapata.JPG" class="img-thumbnail " alt="Seccion columna" width="300px" height="300px">
-                    <strong><p class="text-center">Sección Zapata</p></strong>
+                    <img src="./assets/seccionZapata.JPG" class="img-thumbnail " alt="Seccion columna" width="300px"
+                        height="300px">
+                    <strong>
+                        <p class="text-center">Sección Zapata</p>
+                    </strong>
                 </div>
             </div>
             <hr>
-            <form [formGroup]="fg" (ngSubmit)="chequeoZapata(fg.controls['presionAdmisible'].value, fg.controls['gammaConcreto'].value,
+            <form [formGroup]="fg"
+                (ngSubmit)="chequeoZapata(fg.controls['presionAdmisible'].value, fg.controls['gammaConcreto'].value,
                                fg.controls['pServ'].value, fg.controls['mxServ'].value, fg.controls['myServ'].value, fg.controls['fcZap'].value,
                                fg.controls['lxCol'].value,fg.controls['lyCol'].value,fg.controls['rZapata'].value,fg.controls['eZapata'].value,
-                               fg.controls['lxZap'].value, fg.controls['lyZap'].value )">
+                               fg.controls['lxZap'].value, fg.controls['lyZap'].value,fg.controls['selectedTipoCol'].value )">
                 <div class="row row-flex">
                     <div class="col">
                         <div class="form-group row">
@@ -31,7 +41,9 @@
                                 <label for="presionAdmin">Presión admisible (Tonf/m²) </label>
                             </div>
                             <div class="col-md-8">
-                                <input type="number" class="form-control" id="presionAdmin" placeholder="Ingrese la presión admisible del suelo" [formControl]="fg.controls['presionAdmisible']">
+                                <input type="number" class="form-control" id="presionAdmin"
+                                    placeholder="Ingrese la presión admisible del suelo"
+                                    [formControl]="fg.controls['presionAdmisible']">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -39,7 +51,9 @@
                                 <label for="gammaConcreto">Densidad del concreto (Tonf/m³)</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="number" class="form-control" id="gammaConcreto" placeholder="Ingrese la densidad del concreto" [formControl]="fg.controls['gammaConcreto']">
+                                <input type="number" class="form-control" id="gammaConcreto"
+                                    placeholder="Ingrese la densidad del concreto"
+                                    [formControl]="fg.controls['gammaConcreto']">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -47,7 +61,9 @@
                                 <label for="pServ">P (Tonf)</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="number" class="form-control" id="pServ" placeholder="Ingrese la carga axial que baja por la zapata" [formControl]="fg.controls['pServ']">
+                                <input type="number" class="form-control" id="pServ"
+                                    placeholder="Ingrese la carga axial que baja por la zapata"
+                                    [formControl]="fg.controls['pServ']">
                             </div>
                         </div>
                         <div class=" form-group row ">
@@ -55,7 +71,9 @@
                                 <label for="mxServ ">Mx (Tonf/m)</label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="mxServ " placeholder="Ingrese el momento en dirección X de la zapata " [formControl]="fg.controls['mxServ']">
+                                <input type="number" class="form-control " id="mxServ "
+                                    placeholder="Ingrese el momento en dirección X de la zapata "
+                                    [formControl]="fg.controls['mxServ']">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -63,7 +81,9 @@
                                 <label for="myServ ">My (Tonf/m)</label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="myServ " placeholder="Ingrese el momento en dirección Y de la zapata " [formControl]="fg.controls['myServ']">
+                                <input type="number" class="form-control " id="myServ "
+                                    placeholder="Ingrese el momento en dirección Y de la zapata "
+                                    [formControl]="fg.controls['myServ']">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -71,7 +91,9 @@
                                 <label for="lxCol ">Lado X de la columnas(m) </label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="lxCol " placeholder="Ingrese la dimension de la columna en sentido X " [formControl]="fg.controls['lxCol']">
+                                <input type="number" class="form-control " id="lxCol "
+                                    placeholder="Ingrese la dimension de la columna en sentido X "
+                                    [formControl]="fg.controls['lxCol']">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -79,7 +101,9 @@
                                 <label for="lyCol ">Lado Y de la columnas(m) </label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="lyCol " placeholder="Ingrese la dimension de la columna en sentido Y " [formControl]="fg.controls['lyCol']">
+                                <input type="number" class="form-control " id="lyCol "
+                                    placeholder="Ingrese la dimension de la columna en sentido Y "
+                                    [formControl]="fg.controls['lyCol']">
                             </div>
                         </div>
                     </div>
@@ -90,10 +114,11 @@
                                 <label for="TipoColumna ">Tipo de columna</label>
                             </div>
                             <div class="col-md-8 ">
-                                <select class="form-control" id="tipoColumna" name="tipoColumna">
-                                  <option>Interna</option>
-                                  <option>Borde</option>
-                                  <option>Esquinera</option>
+                                <select class="form-control" id="tipoColumna" name="tipoColumna"
+                                    [formControl]="fg.controls['selectedTipoCol']" placeholder="Ingrese el tipo de col">
+                                    <option selected>Interna</option>
+                                    <option>Borde</option>
+                                    <option>Esquinera</option>
                                 </select>
                             </div>
                         </div>
@@ -102,7 +127,9 @@
                                 <label for="fcZapata ">f'c de la zapata(kgf/cm²) </label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="rzapata " placeholder="Ingrese el recubrimiento de la zapata " [formControl]="fg.controls['fcZap']">
+                                <input type="number" class="form-control " id="rzapata "
+                                    placeholder="Ingrese el recubrimiento de la zapata "
+                                    [formControl]="fg.controls['fcZap']">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -110,7 +137,9 @@
                                 <label for="rzapata ">Recubrimiento de la zapata(m) </label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="rzapata " placeholder="Ingrese el recubrimiento de la zapata " [formControl]="fg.controls['rZapata']">
+                                <input type="number" class="form-control " id="rzapata "
+                                    placeholder="Ingrese el recubrimiento de la zapata "
+                                    [formControl]="fg.controls['rZapata']">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -118,7 +147,9 @@
                                 <label for="ezap ">Espesor de la zapata(m) </label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="ezap " placeholder="Ingrese el espesor de la zapata " [formControl]="fg.controls['eZapata']">
+                                <input type="number" class="form-control " id="ezap "
+                                    placeholder="Ingrese el espesor de la zapata "
+                                    [formControl]="fg.controls['eZapata']">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -126,7 +157,9 @@
                                 <label for="lxZap ">Lado X de la Zapata(m) </label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="lxZap " placeholder="Ingrese la dimension de la zapata en sentido X " [formControl]="fg.controls['lxZap']">
+                                <input type="number" class="form-control " id="lxZap "
+                                    placeholder="Ingrese la dimension de la zapata en sentido X "
+                                    [formControl]="fg.controls['lxZap']">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -134,14 +167,18 @@
                                 <label for="lyZap ">Lado Y de la Zapata(m) </label>
                             </div>
                             <div class="col-md-8 ">
-                                <input type="number" class="form-control " id="lyZap " placeholder="Ingrese la dimension de la zapata en sentido Y " [formControl]="fg.controls['lyZap']">
+                                <input type="number" class="form-control " id="lyZap "
+                                    placeholder="Ingrese la dimension de la zapata en sentido Y "
+                                    [formControl]="fg.controls['lyZap']">
                             </div>
                         </div>
                     </div>
                 </div>
-                <p class="text-info text-justify text-lg-center" *ngIf="!fg.valid">Ingrese todos los parametros para continuar</p>
+                <p class="text-info text-justify text-lg-center" *ngIf="!fg.valid">Ingrese todos los parametros para
+                    continuar</p>
                 <button class="btn btn-primary btn-lg btn-block " type="submit" *ngIf="fg.valid">Chequeo Zapata</button>
-                <p class="text-info text-justify text-lg-center" *ngIf="zapata.areaReal<zapata.areaNecesaria">Area real: {{zapata.areaReal.toFixed(2)}} menor que area requerida: {{zapata.areaNecesaria.toFixed(2)}}</p>
+                <p class="text-info text-justify text-lg-center" *ngIf="zapata.areaReal<zapata.areaNecesaria">Area real:
+                    {{zapata.areaReal.toFixed(2)}} menor que area requerida: {{zapata.areaNecesaria.toFixed(2)}}</p>
             </form>
         </div>
     </div>

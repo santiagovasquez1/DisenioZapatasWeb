@@ -16,6 +16,7 @@ export class Zapata {
   areaReal: number;
   pesoZapata: number;
   fc: number;
+  fy: number;
   recubrimiento: number;
   tipoColumna: ETipoColumna;
 

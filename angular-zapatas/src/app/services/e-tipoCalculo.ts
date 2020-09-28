@@ -1,5 +1,6 @@
 export enum eTipoCalculo{
   Esfuerzo,
   Unidireccional,
-  Bidireccional
+  Bidireccional,
+  Flexion
 }

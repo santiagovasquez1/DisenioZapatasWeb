@@ -40,6 +40,7 @@ export class ZapataComponent implements OnInit {
       eZapata: ['', Validators.required],
       lxZap: ['', Validators.required],
       lyZap: ['', Validators.required],
+      selectedTipoCol:[''],
       chequeoArea: ['', Validators.compose([
         this.zapataValidator(this.areaReal, this.areaNecesario)
       ])],
@@ -57,7 +58,7 @@ export class ZapataComponent implements OnInit {
 
   chequeoZapata(presionAdmisible: number, gammaConcreto: number, pServ: number,
                 mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
-                rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
+                rZapata: number, eZapata: number, lxZap: number, lyZap: number,selectedTipoCol: string) {
 
     this.zapata = new Zapata();
 
@@ -73,6 +74,18 @@ export class ZapataComponent implements OnInit {
     this.zapata.espesorZapata = eZapata;
     this.zapata.ladoxZap = lxZap;
     this.zapata.ladoyZap = lyZap;
+
+    switch (selectedTipoCol) {
+      case 'Interna':
+        this.zapata.tipoColumna = ETipoColumna.Interna
+        break;
+      case 'Borde':
+        this.zapata.tipoColumna = ETipoColumna.Borde;
+        break;
+      case 'Esquinera':
+        this.zapata.tipoColumna = ETipoColumna.Esquinera;
+        break;
+    }
 
     this.zapata.setAreaNecesaria();
     this.zapata.setAreaReal();

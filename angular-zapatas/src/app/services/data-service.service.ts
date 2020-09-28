@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { CortanteBidireccional } from '../Model/cortante-bidireccional';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { IChequeo } from '../Model/i-chequeo';
+import { FlexionZapata } from '../Model/flexion-model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class DataService {
   esfuerzoZapata: EsfuerzoZapata = null;
   cortanteUnidireccional: CortanteUnidireccional = null;
   cortanteBidireccional: CortanteBidireccional = null;
+  flexionZapata: FlexionZapata = null;
   current: Subject<IChequeo> = new BehaviorSubject<IChequeo>(null);
 
   constructor() { }
@@ -33,6 +35,12 @@ export class DataService {
         this.cortanteUnidireccional = new CortanteUnidireccional(z, this.esfuerzoZapata.qMax);
         this.cortanteUnidireccional.Ejecutar();
         this.current.next(this.cortanteUnidireccional);
+        break;
+      }
+      case eTipoCalculo.Flexion: {
+        this.flexionZapata = new FlexionZapata(z, this.esfuerzoZapata.qMax);
+        this.flexionZapata.Ejecutar();
+        this.current.next(this.flexionZapata);
         break;
       }
       default: {
