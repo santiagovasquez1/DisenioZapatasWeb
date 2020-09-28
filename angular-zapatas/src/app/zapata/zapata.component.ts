@@ -97,8 +97,9 @@ export class ZapataComponent implements OnInit {
 
     this.enviarZapata.emit(this.zapata);
     this.dataServie.zapata = this.zapata;
-    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Esfuerzo);
-    this.dataServie.ejecutarCalculo(this.zapata,eTipoCalculo.Bidireccional);
+    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Esfuerzo);    
+    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Unidireccional);
+    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Bidireccional);
     return false;
   }
 

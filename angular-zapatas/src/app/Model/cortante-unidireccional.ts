@@ -10,8 +10,9 @@ export class CortanteUnidireccional implements IChequeo {
   qMax: number;
   phiVc: number;
 
-  constructor(zapatai: Zapata) {
+  constructor(zapatai: Zapata,qmax: number) {
     this.zapata = zapatai;
+    this.qMax=qmax;
   }
 
   private calcVu(ladoZapata: number, ladoColumna: number) {

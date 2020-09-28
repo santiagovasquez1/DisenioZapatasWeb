@@ -10,6 +10,7 @@ import { ListaZapatasComponent } from './lista-zapatas/lista-zapatas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EsfuerzoZapataComponent } from './esfuerzo-zapata/esfuerzo-zapata.component';
 import { CortanteUnidireccionalComponent } from './cortante-unidireccional/cortante-unidireccional.component';
+import { CortanteBidireccionalComponent } from './cortante-bidireccional/cortante-bidireccional.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
     ZapataComponent,
     ListaZapatasComponent,
     EsfuerzoZapataComponent,
-    CortanteUnidireccionalComponent
+    CortanteUnidireccionalComponent,
+    CortanteBidireccionalComponent,
   ],
   imports: [
     BrowserModule,

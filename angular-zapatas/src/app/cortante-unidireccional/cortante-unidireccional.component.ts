@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CortanteUnidireccional } from '../Model/cortante-unidireccional';
+import { DataService } from '../services/data-service.service';
 
 @Component({
   selector: 'app-cortante-unidireccional',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CortanteUnidireccionalComponent implements OnInit {
 
-  constructor() { }
+  cortanteUnidireccional: CortanteUnidireccional;
+
+  constructor(public dataService: DataService) {
+    this.dataService.subscribeOnChange((e: CortanteUnidireccional) => {
+      if (e != null) {
+        this.cortanteUnidireccional = this.dataService.cortanteUnidireccional;
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
