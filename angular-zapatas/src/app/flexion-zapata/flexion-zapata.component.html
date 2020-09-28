@@ -1,1 +1,29 @@
-<p>flexion-zapata works!</p>
+<div class="container content">
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+            <h3 class="mb-0">Chequeo Esfuerzos Zapata</h3>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center align-text-top" scope="col">MuX (Tonf-m)</th>
+                        <th class="text-center align-text-top" scope="col">MuY (Tonf-m)</th>
+                        <th class="text-center align-text-top" scope="col">As min X (cm²)</th>
+                        <th class="text-center align-text-top" scope="col">As min Y (cm²)</th>
+                        <th class="text-center align-text-top" scope="col">As Req X (cm²)</th>
+                        <th class="text-center align-text-top" scope="col">As Req Y (cm²)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td class="text-center">{{flexionZapata.muX.toFixed(2)}}</td>
+                    <td class="text-center">{{flexionZapata.muY.toFixed(2)}}</td>
+                    <td class="text-center">{{flexionZapata.asMinX.toFixed(2)}}</td>
+                    <td class="text-center">{{flexionZapata.asMinY.toFixed(2)}}</td>
+                    <td class="text-center">{{flexionZapata.asReqX.toFixed(2)}}</td>
+                    <td class="text-center">{{flexionZapata.asReqY.toFixed(2)}}</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

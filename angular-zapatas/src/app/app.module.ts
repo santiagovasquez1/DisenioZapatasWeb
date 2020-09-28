@@ -19,6 +19,7 @@ import { VistaZapataComponent } from './vista-zapata/vista-zapata.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: ZapataComponent },
+  { path: 'flexion', component: FlexionZapataComponent }
 ];
 
 @NgModule({
