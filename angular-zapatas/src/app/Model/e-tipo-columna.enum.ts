@@ -1,5 +1,5 @@
 export enum ETipoColumna {
-  Interna = 1,
-  Borde = 2,
-  Esquinera = 3
+  Interna = 'Columna Interna',
+  Borde = 'Columna Externa',
+  Esquinera = 'Columna Esquinera'
 }

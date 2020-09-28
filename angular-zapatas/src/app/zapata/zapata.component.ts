@@ -19,13 +19,14 @@ export class ZapataComponent implements OnInit {
   zapata: Zapata;
   @Input() areaReal = 0;
   @Input() areaNecesario = 0;
+  // @Input() SelectedeTipoCol ;
   @HostBinding('attr.class') cssClass = 'col-md-8';
   @Output() enviarZapata: EventEmitter<Zapata>;
-  tipoColumna: any[];
+  keysTipoCol: string[];
   fg: FormGroup;
 
   constructor(fb: FormBuilder, private dataServie: DataService) {
-    this.tipoColumna = [];
+    this.keysTipoCol = [ETipoColumna.Borde, ETipoColumna.Esquinera, ETipoColumna.Interna];
     this.enviarZapata = new EventEmitter();
     this.fg = fb.group({
       presionAdmisible: ['', Validators.required],
@@ -40,6 +41,7 @@ export class ZapataComponent implements OnInit {
       eZapata: ['', Validators.required],
       lxZap: ['', Validators.required],
       lyZap: ['', Validators.required],
+      selectedTipoCol: ['', Validators.required],
       chequeoArea: ['', Validators.compose([
         this.zapataValidator(this.areaReal, this.areaNecesario)
       ])],
@@ -48,16 +50,16 @@ export class ZapataComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for (let t in ETipoColumna) {
-      if (isNaN(Number(t))) {
-        this.tipoColumna.push({ text: t, value: ETipoColumna[t]});
-      }
-    }
+    // for (let t in ETipoColumna) {
+    //   if (isNaN(Number(t))) {
+    //     this.keysTipoCol.push({ text: t, value: ETipoColumna[t] });
+    //   }
+    // }
   }
 
   chequeoZapata(presionAdmisible: number, gammaConcreto: number, pServ: number,
-                mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
-                rZapata: number, eZapata: number, lxZap: number, lyZap: number) {
+    mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
+    rZapata: number, eZapata: number, lxZap: number, lyZap: number, selectedTipoCol: string) {
 
     this.zapata = new Zapata();
 
@@ -74,6 +76,18 @@ export class ZapataComponent implements OnInit {
     this.zapata.ladoxZap = lxZap;
     this.zapata.ladoyZap = lyZap;
 
+    switch (selectedTipoCol) {
+      case 'Interna':
+        this.zapata.tipoColumna = ETipoColumna.Interna
+        break;
+      case 'Borde':
+        this.zapata.tipoColumna = ETipoColumna.Borde;
+        break;
+      case 'Esquinera':
+        this.zapata.tipoColumna = ETipoColumna.Esquinera;
+        break;
+    }
+
     this.zapata.setAreaNecesaria();
     this.zapata.setAreaReal();
     this.zapata.setPesoPropio();
@@ -84,8 +98,7 @@ export class ZapataComponent implements OnInit {
     this.enviarZapata.emit(this.zapata);
     this.dataServie.zapata = this.zapata;
     this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Esfuerzo);
-    console.log(this.dataServie.zapata);
-    console.log(this.dataServie.esfuerzoZapata);
+    this.dataServie.ejecutarCalculo(this.zapata,eTipoCalculo.Bidireccional);
     return false;
   }
 
