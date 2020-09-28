@@ -29,18 +29,19 @@ export class ZapataComponent implements OnInit {
     this.enviarZapata = new EventEmitter();
     this.fg = fb.group({
       presionAdmisible: ['', Validators.required],
-      gammaConcreto: ['', Validators.required],
+      gammaConcreto: [2.4, Validators.required],
       pServ: ['', Validators.required],
       mxServ: ['', Validators.required],
       myServ: ['', Validators.required],
-      fcZap: ['', Validators.required],
+      fcZap: [210, Validators.required],
+      fyZap: [4220, Validators.required],
       lxCol: ['', Validators.required],
       lyCol: ['', Validators.required],
       rZapata: ['', Validators.required],
       eZapata: ['', Validators.required],
       lxZap: ['', Validators.required],
       lyZap: ['', Validators.required],
-      selectedTipoCol:[''],
+      selectedTipoCol: ['Interna'],
       chequeoArea: ['', Validators.compose([
         this.zapataValidator(this.areaReal, this.areaNecesario)
       ])],
@@ -51,14 +52,14 @@ export class ZapataComponent implements OnInit {
   ngOnInit(): void {
     for (let t in ETipoColumna) {
       if (isNaN(Number(t))) {
-        this.tipoColumna.push({ text: t, value: ETipoColumna[t]});
+        this.tipoColumna.push({ text: t, value: ETipoColumna[t] });
       }
     }
   }
 
   chequeoZapata(presionAdmisible: number, gammaConcreto: number, pServ: number,
-                mxServ: number, myServ: number, fcZap: number, lxCol: number, lyCol: number,
-                rZapata: number, eZapata: number, lxZap: number, lyZap: number,selectedTipoCol: string) {
+    mxServ: number, myServ: number, fcZap: number, fyZap: number, lxCol: number, lyCol: number,
+    rZapata: number, eZapata: number, lxZap: number, lyZap: number, selectedTipoCol: string) {
 
     this.zapata = new Zapata();
 
@@ -68,6 +69,7 @@ export class ZapataComponent implements OnInit {
     this.zapata.mx = mxServ;
     this.zapata.my = myServ;
     this.zapata.fc = fcZap;
+    this.zapata.fy = fyZap;
     this.zapata.lxCol = lxCol;
     this.zapata.lyCol = lyCol;
     this.zapata.recubrimiento = rZapata;
@@ -99,6 +101,7 @@ export class ZapataComponent implements OnInit {
     this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Esfuerzo);
     this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Unidireccional);
     this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Bidireccional);
+    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Flexion);
     return false;
   }
 

@@ -14,6 +14,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CortanteBidireccionalComponent } from './cortante-bidireccional/cortante-bidireccional.component';
 import { FlexionZapataComponent } from './flexion-zapata/flexion-zapata.component';
+import { VistaZapataComponent } from './vista-zapata/vista-zapata.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -30,7 +31,8 @@ const routes: Routes = [
     NavBarComponent,
     FooterComponent,
     CortanteBidireccionalComponent,
-    FlexionZapataComponent
+    FlexionZapataComponent,
+    VistaZapataComponent
   ],
   imports: [
     BrowserModule,

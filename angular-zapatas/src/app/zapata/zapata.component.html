@@ -30,7 +30,7 @@
             <hr>
             <form [formGroup]="fg"
                 (ngSubmit)="chequeoZapata(fg.controls['presionAdmisible'].value, fg.controls['gammaConcreto'].value,
-                               fg.controls['pServ'].value, fg.controls['mxServ'].value, fg.controls['myServ'].value, fg.controls['fcZap'].value,
+                               fg.controls['pServ'].value, fg.controls['mxServ'].value, fg.controls['myServ'].value, fg.controls['fcZap'].value,fg.controls['fyZap'].value,
                                fg.controls['lxCol'].value,fg.controls['lyCol'].value,fg.controls['rZapata'].value,fg.controls['eZapata'].value,
                                fg.controls['lxZap'].value, fg.controls['lyZap'].value,fg.controls['selectedTipoCol'].value )">
                 <div class="row row-flex">
@@ -128,8 +128,16 @@
                             </div>
                             <div class="col-md-8 ">
                                 <input type="number" class="form-control " id="rzapata "
-                                    placeholder="Ingrese el recubrimiento de la zapata "
-                                    [formControl]="fg.controls['fcZap']">
+                                    placeholder="Ingrese el f'c de la zapata " [formControl]="fg.controls['fcZap']">
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <div class="col-md-4 ">
+                                <label for="fyZapata ">fy del refuerzo (kgf/cm²) </label>
+                            </div>
+                            <div class="col-md-8 ">
+                                <input type="number" class="form-control " id="rzapata "
+                                    placeholder="Ingrese el fy de la zapata " [formControl]="fg.controls['fyZap']">
                             </div>
                         </div>
                         <div class="form-group row ">
