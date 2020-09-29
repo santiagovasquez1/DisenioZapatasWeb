@@ -1,12 +1,34 @@
 <div class="card-content">
     <div class="card-img">
         <img src="./assets/seccionGeneral.JPG" alt="Seccion General" width="300px" height="300px">
-        <span><h4>Resumen Propiedades Zapata</h4></span>
+        <span><h4>Resumen propiedades zapata</h4></span>
     </div>
     <div class="card-desc">
-        <h3>{{dataService.zapata.areaReal}}</h3>
-        <p>Resumen</p>
+        <p>Resumen Geometria</p>
         <ul>
+            <li>Lado X Zapata (m): {{dataService.zapata.ladoxZap.toFixed(2)}}</li>
+            <li>Lado Y Zapata (m): {{dataService.zapata.ladoyZap.toFixed(2)}}</li>
+            <li>Lado X Pedestal (m): {{dataService.zapata.lxCol.toFixed(2)}}</li>
+            <li>Lado Y Pedestal (m): {{dataService.zapata.lyCol.toFixed(2)}}</li>
+            <li>Espesor Zapata (m): {{dataService.zapata.espesorZapata.toFixed(2)}}</li>
+            <li>Area Real (m²): {{dataService.zapata.areaReal.toFixed(2)}}</li>
+            <li>Area Requerida (m²): {{dataService.zapata.areaNecesaria.toFixed(2)}}</li>
+        </ul>
+        <p>Resumen Esfuerzo Zapata</p>
+        <ul>
+            <li>Presion Admisible (tonf/m²): {{dataService.zapata.PresionAdmisible.toFixed(2)}}</li>
+            <li>Esfuerzo máximo Zapata (tonf/m²): {{dataService.esfuerzoZapata.qMax.toFixed(2)}}</li>
+        </ul>
+        <p>Resumen Cortante unidireccional</p>
+        <ul>
+            <li>Esfuerzo Cortante X(tonf/m²): {{dataService.cortanteUnidireccional.euX.toFixed(2)}}</li>
+            <li>Esfuerzo Cortante Y(tonf/m²): {{dataService.cortanteUnidireccional.euY.toFixed(2)}}</li>
+            <li>Capacidad a cortante de la zapata (tonf/m²): {{dataService.cortanteUnidireccional.phiVc.toFixed(2)}}</li>
+        </ul>
+        <p>Resumen Cortante bidireccional</p>
+        <ul>
+            <li>Esfuerzo cortante máximo en zapata (Tonf/m²): {{dataService.cortanteBidireccional.vu.toFixed(2)}}</li>
+            <li>Capacidad a cortante de la zapata (tonf/m²): {{dataService.cortanteBidireccional.phiVcDef.toFixed(2)}}</li>
         </ul>
     </div>
 </div>

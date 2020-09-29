@@ -33,29 +33,27 @@
     width: 100%;
     height: auto;
     display: block;
+    margin-top: 20%;
+    padding: 0;
 }
 
 .card-img span {
     position: absolute;
-    top: 15%;
-    left: 12%;
-    background: #1ABC9C;
+    top: 7%;
+    left: 35%;
+    background: #E9ECEF;
     padding: 6px;
-    color: #fff;
     font-size: 12px;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+    width: fit-content;
     transform: translate(-50%, -50%);
 }
 
 .card-img span h4 {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     padding: 10px 5px;
-    line-height: 0;
+    line-height: normal;
+    width: fit-content;
 }
 
 .card-desc {
