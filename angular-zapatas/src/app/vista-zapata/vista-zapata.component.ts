@@ -1,3 +1,5 @@
+import { Zapata } from './../Model/zapata';
+import { DataService } from './../services/data-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VistaZapataComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
   }
