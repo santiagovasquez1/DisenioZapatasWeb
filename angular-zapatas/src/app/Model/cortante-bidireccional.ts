@@ -10,20 +10,22 @@ export class CortanteBidireccional implements IChequeo {
   phiVc3: number;
   phiVcDef: number;
   qMax: number;
+  phiCortante: number;
 
-  constructor(zapatai: Zapata, qmax: number) {
+  constructor(zapatai: Zapata, qmax: number, phi: number) {
     this.zapata = zapatai;
     this.qMax = qmax;
+    this.phiCortante = phi;
   }
 
   private calculoPhiVc1(): number {
-    const phivc = 1.1 * 0.75 * Math.sqrt(this.zapata.fc) * 10;
+    const phivc = 1.1 * this.phiCortante * Math.sqrt(this.zapata.fc) * 10;
     return phivc;
   }
 
   private CalculoPhiVc2(): number {
     const beta = Math.max(this.zapata.lxCol, this.zapata.lyCol) / Math.min(this.zapata.lxCol, this.zapata.lyCol);
-    const phivc = 10 * 0.75 * 0.53 * (1 + (2 / beta)) * Math.sqrt(this.zapata.fc);
+    const phivc = 10 * this.phiCortante * 0.53 * (1 + (2 / beta)) * Math.sqrt(this.zapata.fc);
     return phivc;
   }
   private calculoPhiVc3(): number {
@@ -39,7 +41,7 @@ export class CortanteBidireccional implements IChequeo {
         break;
     }
 
-    const phivc = 10 * 0.75 * 0.27 * (2 + (asd * d * 100 / b0)) * Math.sqrt(this.zapata.fc);
+    const phivc = 10 * this.phiCortante * 0.27 * (2 + (asd * d * 100 / b0)) * Math.sqrt(this.zapata.fc);
     return phivc;
   }
 

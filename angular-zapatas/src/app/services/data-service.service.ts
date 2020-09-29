@@ -14,6 +14,8 @@ import { FlexionZapata } from '../Model/flexion-model';
 export class DataService {
 
   zapata: Zapata = null;
+  phiFlexionZapata: number;
+  phiCortanteZapata: number;
   esfuerzoZapata: EsfuerzoZapata = null;
   cortanteUnidireccional: CortanteUnidireccional = null;
   cortanteBidireccional: CortanteBidireccional = null;
@@ -22,7 +24,7 @@ export class DataService {
 
   constructor() { }
 
-  public ejecutarCalculo(z: Zapata, caso: eTipoCalculo) {
+  public ejecutarCalculo(z: Zapata, caso: eTipoCalculo, phi: number) {
 
     switch (caso) {
       case eTipoCalculo.Esfuerzo: {
@@ -32,19 +34,19 @@ export class DataService {
         break;
       }
       case eTipoCalculo.Unidireccional: {
-        this.cortanteUnidireccional = new CortanteUnidireccional(z, this.esfuerzoZapata.qMax);
+        this.cortanteUnidireccional = new CortanteUnidireccional(z, this.esfuerzoZapata.qMax, phi);
         this.cortanteUnidireccional.Ejecutar();
         this.current.next(this.cortanteUnidireccional);
         break;
       }
       case eTipoCalculo.Flexion: {
-        this.flexionZapata = new FlexionZapata(z, this.esfuerzoZapata.qMax);
+        this.flexionZapata = new FlexionZapata(z, this.esfuerzoZapata.qMax, phi);
         this.flexionZapata.Ejecutar();
         this.current.next(this.flexionZapata);
         break;
       }
       default: {
-        this.cortanteBidireccional = new CortanteBidireccional(z, this.esfuerzoZapata.qMax);
+        this.cortanteBidireccional = new CortanteBidireccional(z, this.esfuerzoZapata.qMax, phi);
         this.cortanteBidireccional.Ejecutar();
         this.current.next(this.cortanteBidireccional);
         break;

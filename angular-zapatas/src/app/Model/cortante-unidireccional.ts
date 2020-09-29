@@ -8,11 +8,13 @@ export class CortanteUnidireccional implements IChequeo {
   euX: number;
   euY: number;
   qMax: number;
+  phiCortante: number;
   phiVc: number;
 
-  constructor(zapatai: Zapata, qmax: number) {
+  constructor(zapatai: Zapata, qmax: number, phi: number) {
     this.zapata = zapatai;
     this.qMax = qmax;
+    this.phiCortante = phi;
   }
 
   private calcVu(ladoZapata1: number, ladoZapata2: number, ladoColumna: number) {
@@ -23,7 +25,7 @@ export class CortanteUnidireccional implements IChequeo {
   }
 
   private calcPhiVc(fc: number): number {
-    const phivc = 0.75 * 0.53 * Math.sqrt(fc) * 10;
+    const phivc = this.phiCortante * 0.53 * Math.sqrt(fc) * 10;
     return phivc;
   }
 

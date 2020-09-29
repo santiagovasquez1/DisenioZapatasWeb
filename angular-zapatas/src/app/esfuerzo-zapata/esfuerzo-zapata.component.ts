@@ -26,6 +26,11 @@ export class EsfuerzoZapataComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.dataService.subscribeOnChange((e: EsfuerzoZapata) => {
+      if (e != null) {
+        this.esfuerzoZapata = this.dataService.esfuerzoZapata;
+      }
+    });
   }
 
 }

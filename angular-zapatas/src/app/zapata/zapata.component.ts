@@ -8,6 +8,7 @@ import { Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidatorFn, Validators, ReactiveFormsModule } from '@angular/forms';
 import { IChequeo } from '../Model/i-chequeo';
 import { eTipoCalculo } from '../services/e-tipoCalculo';
+import { isNull } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-zapata',
@@ -24,33 +25,65 @@ export class ZapataComponent implements OnInit {
   tipoColumna: any[];
   fg: FormGroup;
 
-  constructor(fb: FormBuilder, private dataServie: DataService) {
+  constructor(fb: FormBuilder, private dataService: DataService) {
     this.tipoColumna = [];
     this.enviarZapata = new EventEmitter();
-    this.fg = fb.group({
-      presionAdmisible: ['', Validators.required],
-      gammaConcreto: [2.4, Validators.required],
-      pServ: ['', Validators.required],
-      mxServ: ['', Validators.required],
-      myServ: ['', Validators.required],
-      fcZap: [210, Validators.required],
-      fyZap: [4220, Validators.required],
-      lxCol: ['', Validators.required],
-      lyCol: ['', Validators.required],
-      rZapata: ['', Validators.required],
-      eZapata: ['', Validators.required],
-      lxZap: ['', Validators.required],
-      lyZap: ['', Validators.required],
-      selectedTipoCol: ['Interna'],
-      chequeoArea: ['', Validators.compose([
-        this.zapataValidator(this.areaReal, this.areaNecesario)
-      ])],
+    this.formGroupLoad(dataService, fb);
 
-    });
+  }
+
+  private formGroupLoad(dataService: DataService, fb: FormBuilder) {
+    if (dataService.zapata == null) {
+      this.fg = fb.group({
+        presionAdmisible: ['', Validators.required],
+        gammaConcreto: [2.4, Validators.required],
+        pServ: ['', Validators.required],
+        mxServ: ['', Validators.required],
+        myServ: ['', Validators.required],
+        fcZap: [210, Validators.required],
+        fyZap: [4220, Validators.required],
+        lxCol: ['', Validators.required],
+        lyCol: ['', Validators.required],
+        rZapata: ['', Validators.required],
+        eZapata: ['', Validators.required],
+        lxZap: ['', Validators.required],
+        lyZap: ['', Validators.required],
+        phiCortante: [0.75, Validators.required],
+        phiFlexion: [0.90, Validators.required],
+        selectedTipoCol: ['Interna'],
+        chequeoArea: ['', Validators.compose([
+          this.zapataValidator(this.areaReal, this.areaNecesario)
+        ])],
+      });
+    }
+    else {
+      this.fg = fb.group({
+        presionAdmisible: [dataService.zapata.PresionAdmisible, Validators.required],
+        gammaConcreto: [2.4, Validators.required],
+        pServ: [dataService.zapata.P, Validators.required],
+        mxServ: [dataService.zapata.mx, Validators.required],
+        myServ: [dataService.zapata.my, Validators.required],
+        fcZap: [dataService.zapata.fc, Validators.required],
+        fyZap: [dataService.zapata.fy, Validators.required],
+        lxCol: [dataService.zapata.lxCol, Validators.required],
+        lyCol: [dataService.zapata.lyCol, Validators.required],
+        rZapata: [dataService.zapata.recubrimiento, Validators.required],
+        eZapata: [dataService.zapata.espesorZapata, Validators.required],
+        lxZap: [dataService.zapata.ladoxZap, Validators.required],
+        lyZap: [dataService.zapata.ladoyZap, Validators.required],
+        phiCortante: [dataService.phiCortanteZapata, Validators.required],
+        phiFlexion: [dataService.phiFlexionZapata, Validators.required],
+        selectedTipoCol: ['Interna'],
+        chequeoArea: ['', Validators.compose([
+          this.zapataValidator(this.areaReal, this.areaNecesario)
+        ])],
+      });
+
+    }
   }
 
   ngOnInit(): void {
-    for (let t in ETipoColumna) {
+    for (const t in ETipoColumna) {
       if (isNaN(Number(t))) {
         this.tipoColumna.push({ text: t, value: ETipoColumna[t] });
       }
@@ -59,7 +92,7 @@ export class ZapataComponent implements OnInit {
 
   chequeoZapata(presionAdmisible: number, gammaConcreto: number, pServ: number,
     mxServ: number, myServ: number, fcZap: number, fyZap: number, lxCol: number, lyCol: number,
-    rZapata: number, eZapata: number, lxZap: number, lyZap: number, selectedTipoCol: string) {
+    rZapata: number, eZapata: number, lxZap: number, lyZap: number, selectedTipoCol: string, phiCortante: number, phiFlexion: number) {
 
     this.zapata = new Zapata();
 
@@ -79,7 +112,7 @@ export class ZapataComponent implements OnInit {
 
     switch (selectedTipoCol) {
       case 'Interna':
-        this.zapata.tipoColumna = ETipoColumna.Interna
+        this.zapata.tipoColumna = ETipoColumna.Interna;
         break;
       case 'Borde':
         this.zapata.tipoColumna = ETipoColumna.Borde;
@@ -97,12 +130,19 @@ export class ZapataComponent implements OnInit {
     this.areaReal = this.zapata.areaReal;
 
     this.enviarZapata.emit(this.zapata);
-    this.dataServie.zapata = this.zapata;
-    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Esfuerzo);
-    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Unidireccional);
-    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Bidireccional);
-    this.dataServie.ejecutarCalculo(this.zapata, eTipoCalculo.Flexion);
+    this.dataService.zapata = this.zapata;
+    this.dataService.phiCortanteZapata = phiCortante;
+    this.dataService.phiFlexionZapata = phiFlexion;
+
+    this.dataService.ejecutarCalculo(this.zapata, eTipoCalculo.Esfuerzo, phiCortante);
+    this.dataService.ejecutarCalculo(this.zapata, eTipoCalculo.Unidireccional, phiCortante);
+    this.dataService.ejecutarCalculo(this.zapata, eTipoCalculo.Bidireccional, phiCortante);
+    this.dataService.ejecutarCalculo(this.zapata, eTipoCalculo.Flexion, phiFlexion);
     return false;
+  }
+
+  private calculosLoad() {
+
   }
 
   zapataValidator(areaReal: number, areaNecesaria: number): ValidatorFn {
