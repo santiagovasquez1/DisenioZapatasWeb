@@ -17,7 +17,7 @@ export class EsfuerzoZapataComponent implements OnInit {
 
   constructor(public dataService: DataService) {
 
-    this.dataService.subscribeOnChange((e: EsfuerzoZapata) => {
+    this.dataService.subscribeOnChangeZapata((e: EsfuerzoZapata) => {
       if (e != null) {
         this.esfuerzoZapata = this.dataService.esfuerzoZapata;
       }
@@ -26,7 +26,7 @@ export class EsfuerzoZapataComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.dataService.subscribeOnChange((e: EsfuerzoZapata) => {
+    this.dataService.subscribeOnChangeZapata((e: EsfuerzoZapata) => {
       if (e != null) {
         this.esfuerzoZapata = this.dataService.esfuerzoZapata;
       }

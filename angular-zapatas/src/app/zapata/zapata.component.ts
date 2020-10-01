@@ -138,6 +138,7 @@ export class ZapataComponent implements OnInit {
     this.dataService.ejecutarCalculo(this.zapata, eTipoCalculo.Unidireccional, phiCortante);
     this.dataService.ejecutarCalculo(this.zapata, eTipoCalculo.Bidireccional, phiCortante);
     this.dataService.ejecutarCalculo(this.zapata, eTipoCalculo.Flexion, phiFlexion);
+    this.dataService.setDespiece(this.dataService.flexionZapata);
     return false;
   }
 

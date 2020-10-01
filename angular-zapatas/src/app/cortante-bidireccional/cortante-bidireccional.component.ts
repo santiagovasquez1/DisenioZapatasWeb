@@ -12,7 +12,7 @@ export class CortanteBidireccionalComponent implements OnInit {
   cortanteBidireccional: CortanteBidireccional;
 
   constructor(public dataService: DataService) {
-    this.dataService.subscribeOnChange((e: CortanteBidireccional) => {
+    this.dataService.subscribeOnChangeZapata((e: CortanteBidireccional) => {
       if (e != null) {
         this.cortanteBidireccional = this.dataService.cortanteBidireccional;
       }

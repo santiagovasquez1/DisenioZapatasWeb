@@ -13,7 +13,7 @@ export class CortanteUnidireccionalComponent implements OnInit {
   cortanteUnidireccional: CortanteUnidireccional;
 
   constructor(public dataService: DataService) {
-    this.dataService.subscribeOnChange((e: CortanteUnidireccional) => {
+    this.dataService.subscribeOnChangeZapata((e: CortanteUnidireccional) => {
       if (e != null) {
         this.cortanteUnidireccional = this.dataService.cortanteUnidireccional;
       }

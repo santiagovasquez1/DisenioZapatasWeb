@@ -15,7 +15,7 @@ export class FlexionZapataComponent implements OnInit {
 
   constructor(public dataService: DataService) {
 
-    this.dataService.subscribeOnChange((e: FlexionZapata) => {
+    this.dataService.subscribeOnChangeZapata((e: FlexionZapata) => {
       if (e != null) {
         this.flexionZapata = this.dataService.flexionZapata;
       }

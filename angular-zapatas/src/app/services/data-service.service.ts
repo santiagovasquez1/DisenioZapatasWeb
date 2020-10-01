@@ -8,6 +8,7 @@ import { CortanteBidireccional } from '../Model/cortante-bidireccional';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { IChequeo } from '../Model/i-chequeo';
 import { FlexionZapata } from '../Model/flexion-model';
+import { DespieceZapata } from '../Model/despiece-zapata';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,9 @@ export class DataService {
   cortanteUnidireccional: CortanteUnidireccional = null;
   cortanteBidireccional: CortanteBidireccional = null;
   flexionZapata: FlexionZapata = null;
+  despieceZapata: DespieceZapata = null;
   current: Subject<IChequeo> = new BehaviorSubject<IChequeo>(null);
+  currentDespiece: Subject<DespieceZapata> = new BehaviorSubject<DespieceZapata>(null);
 
   refuerzos = [new Refuerzo('#3', 0.71), new Refuerzo('#4', 1.29),
   new Refuerzo('#5', 1.99), new Refuerzo('#6', 2.85), new Refuerzo('#7', 3.88),
@@ -55,12 +58,19 @@ export class DataService {
         break;
       }
     }
-
-
   }
 
-  subscribeOnChange(fn) {
+  public setDespiece(flexZapata: FlexionZapata) {
+    this.despieceZapata = new DespieceZapata(flexZapata);
+    this.currentDespiece.next(this.despieceZapata);
+  }
+
+  subscribeOnChangeZapata(fn) {
     this.current.subscribe(fn);
+  }
+
+  subscribeOnChangeDespiece(fn) {
+    this.currentDespiece.subscribe(fn);
   }
 
 }
