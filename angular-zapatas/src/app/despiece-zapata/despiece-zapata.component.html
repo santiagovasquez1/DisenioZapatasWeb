@@ -1,0 +1,70 @@
+<div class="card card-outline-secondary">
+    <div class="card-header">
+        <h4 class="mb-0">Diseño a flexión Zapata </h4>
+    </div>
+    <div class="row row-flex no-gutters">
+        <div class="col-5 align-self-center">
+            <img src="./assets/seccionZapata.JPG" class="img-fluid" alt="Seccion Zapata">
+        </div>
+        <div class="col">
+            <form>
+                <div class="form-group row row-flex">
+                    <div class="col">
+                        <label for="asDefX">{{asDefX}}</label>
+                    </div>
+                </div>
+                <div class="form-group row row-flex">
+                    <div class="col">
+                        <label for="asDefY">{{asDefY}}</label>
+                    </div>
+                </div>
+
+                <div class="form-group row row-flex">
+                    <div class="col">
+                        <label for="RefuerzoX">Refuerzo en dir X (cm²):</label>
+                    </div>
+                    <div class="col">
+                        <select name="RefuerzoX" class="form-control">
+                                    <option *ngFor="let ref of dataService.refuerzos" [ngValue]="ref">{{ref.diametro}}</option>
+                                  </select>
+                    </div>
+                    <div class="col">
+                        <label for="sep">cada (cm):</label>
+                    </div>
+                    <div class="col mr-3">
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row row-flex">
+                    <div class="col">
+                        <label>As en dir X :</label>
+                    </div>
+                </div>
+
+                <div class="form-group row row-flex">
+                    <div class="col">
+                        <label for="RefuerzoX">Refuerzo en dir Y (cm²):</label>
+                    </div>
+                    <div class="col">
+                        <select name="RefuerzoY" class="form-control">
+                                  <option *ngFor="let ref of dataService.refuerzos" [ngValue]="ref">{{ref.diametro}}</option>
+                                </select>
+                    </div>
+                    <div class="col">
+                        <label for="sep">cada (cm):</label>
+                    </div>
+                    <div class="col mr-3">
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row row-flex">
+                    <div class="col">
+                        <label>As en dir Y (cm²):</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

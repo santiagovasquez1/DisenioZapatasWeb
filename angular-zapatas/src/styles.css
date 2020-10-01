@@ -126,3 +126,20 @@ a.btn-card {
 .bg-custom-2 {
     background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
+
+.form-group {
+    font-size: 14px;
+}
+
+.form-control {
+    font-size: 14px;
+}
+
+.table {
+    font-size: 12px;
+}
+
+
+/* .car-header {
+    font-size: 10px;
+} */

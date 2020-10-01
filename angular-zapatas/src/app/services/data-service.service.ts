@@ -1,3 +1,4 @@
+import { Refuerzo } from './../Model/refuerzo';
 import { eTipoCalculo } from './e-tipoCalculo';
 import { CortanteUnidireccional } from './../Model/cortante-unidireccional';
 import { EsfuerzoZapata } from './../Model/esfuerzo-zapata';
@@ -22,7 +23,9 @@ export class DataService {
   flexionZapata: FlexionZapata = null;
   current: Subject<IChequeo> = new BehaviorSubject<IChequeo>(null);
 
-  constructor() { }
+  refuerzos = [new Refuerzo('#3', 0.71), new Refuerzo('#4', 1.29),
+  new Refuerzo('#5', 1.99), new Refuerzo('#6', 2.85), new Refuerzo('#7', 3.88),
+  new Refuerzo('#8', 5.10)];
 
   public ejecutarCalculo(z: Zapata, caso: eTipoCalculo, phi: number) {
 

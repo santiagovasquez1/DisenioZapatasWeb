@@ -48,10 +48,11 @@ export class CortanteBidireccional implements IChequeo {
   private calculoVu(): number {
     const d = this.zapata.espesorZapata - this.zapata.recubrimiento;
     const A1 = this.zapata.ladoxZap * this.zapata.ladoyZap;
-    const A2 = (this.zapata.lxCol + d) + (this.zapata.lyCol + d);
+    const A2 = (this.zapata.lxCol + d) * (this.zapata.lyCol + d);
     const Ac = A1 - A2;
     const Vu = 1.4 * this.qMax * Ac;
-    return Vu;
+    const denom = ((this.zapata.lxCol + d) + (this.zapata.lyCol + d)) * 2 * d;
+    return Vu / denom;
   }
 
   Ejecutar(): void {
