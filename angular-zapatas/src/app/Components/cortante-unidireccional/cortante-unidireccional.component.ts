@@ -1,6 +1,6 @@
-import { CortanteUnidireccional } from './../Model/cortante-unidireccional';
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { DataService } from '../services/data-service.service';
+import { CortanteUnidireccional } from 'src/app/Model/cortante-unidireccional';
+import { DataService } from 'src/app/services/data-service.service';
 
 @Component({
   selector: 'app-cortante-unidireccional',

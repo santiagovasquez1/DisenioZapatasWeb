@@ -1,14 +1,11 @@
-import { ETipoColumna } from './../Model/e-tipo-columna.enum';
-import { DataService } from './../services/data-service.service';
-import { CortanteBidireccional } from './../Model/cortante-bidireccional';
-import { CortanteUnidireccional } from './../Model/cortante-unidireccional';
-import { Zapata } from './../Model/zapata';
 import { Component, HostBinding, OnInit, Output, EventEmitter } from '@angular/core';
 import { Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidatorFn, Validators, ReactiveFormsModule } from '@angular/forms';
-import { IChequeo } from '../Model/i-chequeo';
-import { eTipoCalculo } from '../services/e-tipoCalculo';
 import { isNull } from '@angular/compiler/src/output/output_ast';
+import { ETipoColumna } from 'src/app/Model/e-tipo-columna.enum';
+import { Zapata } from 'src/app/Model/zapata';
+import { DataService } from 'src/app/services/data-service.service';
+import { eTipoCalculo } from 'src/app/services/e-tipoCalculo';
 
 @Component({
   selector: 'app-zapata',

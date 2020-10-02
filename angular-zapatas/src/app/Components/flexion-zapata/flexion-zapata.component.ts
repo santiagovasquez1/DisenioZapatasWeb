@@ -1,7 +1,7 @@
-import { Refuerzo } from './../Model/refuerzo';
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { DataService } from './../services/data-service.service';
-import { FlexionZapata } from './../Model/flexion-model';
+import { FlexionZapata } from 'src/app/Model/flexion-model';
+import { DataService } from 'src/app/services/data-service.service';
+
 
 @Component({
   selector: 'app-flexion-zapata',

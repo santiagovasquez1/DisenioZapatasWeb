@@ -1,12 +1,12 @@
-import { Zapata } from './../Model/zapata';
-import { FlexionZapata } from './../Model/flexion-model';
+
 import { FormGroup, Validators, FormBuilder, FormControl, AbstractControl } from '@angular/forms';
-import { DataService } from './../services/data-service.service';
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Refuerzo } from '../Model/refuerzo';
-import { DespieceZapata } from '../Model/despiece-zapata';
 import { FileVisitorCancelToken } from '@angular-devkit/schematics';
 import { parse } from 'path';
+import { DespieceZapata } from 'src/app/Model/despiece-zapata';
+import { Refuerzo } from 'src/app/Model/refuerzo';
+import { Zapata } from 'src/app/Model/zapata';
+import { DataService } from 'src/app/services/data-service.service';
 
 
 @Component({

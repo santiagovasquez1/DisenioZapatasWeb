@@ -1,6 +1,6 @@
-import { Zapata } from './../Model/zapata';
-import { DataService } from './../services/data-service.service';
+
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data-service.service';
 
 @Component({
   selector: 'app-vista-zapata',

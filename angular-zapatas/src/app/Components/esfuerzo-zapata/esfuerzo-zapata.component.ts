@@ -1,8 +1,7 @@
-import { DataService } from './../services/data-service.service';
-import { ZapataComponent } from './../zapata/zapata.component';
-import { Zapata } from './../Model/zapata';
-import { EsfuerzoZapata } from './../Model/esfuerzo-zapata';
+
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { EsfuerzoZapata } from 'src/app/Model/esfuerzo-zapata';
+import { DataService } from 'src/app/services/data-service.service';
 
 @Component({
   selector: 'app-esfuerzo-zapata',

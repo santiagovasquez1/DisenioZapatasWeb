@@ -1,5 +1,6 @@
-import { Zapata } from './../Model/zapata';
+
 import { Component, OnInit } from '@angular/core';
+import { Zapata } from 'src/app/Model/zapata';
 
 @Component({
   selector: 'app-lista-zapatas',

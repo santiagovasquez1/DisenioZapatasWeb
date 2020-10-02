@@ -1,6 +1,6 @@
-import { CortanteBidireccional } from './../Model/cortante-bidireccional';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data-service.service';
+import { CortanteBidireccional } from 'src/app/Model/cortante-bidireccional';
+import { DataService } from 'src/app/services/data-service.service';
 
 @Component({
   selector: 'app-cortante-bidireccional',
