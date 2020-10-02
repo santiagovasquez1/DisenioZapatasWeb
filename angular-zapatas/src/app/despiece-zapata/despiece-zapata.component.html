@@ -1,4 +1,4 @@
-<div class="card card-outline-secondary">
+<div class="card-content">
     <div class="card-header">
         <h4 class="mb-0">Diseño a flexión Zapata </h4>
     </div>
@@ -89,32 +89,28 @@
 
 <hr>
 
-<div class="card card-outline-secondary">
+<div class="card-content">
     <div class="card-header">
-        <h4 class="mb-0">Resumen despiece Zapata </h4>
+        <h4>Cuadro despiece Zapata</h4>
     </div>
-    <div class="card-body">
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th class="text-center align-text-top" scope="col">Lado X pedestal (m) :</th>
-                    <th class="text-center align-text-top" scope="col">Lado Y pedesta (m) :</th>
-                    <th class="text-center align-text-top" scope="col">Espesor Zapata (m) :</th>
-                    <th class="text-center align-text-top" scope="col">Lado X Zapata (m) :</th>
-                    <th class="text-center align-text-top" scope="col">Lado Y Zapata (m) :</th>
-                    <th class="text-center align-text-top" scope="col">Refuerzo dir X :</th>
-                    <th class="text-center align-text-top" scope="col">Refuerzo dir Y :</th>
-                </tr>
-            </thead>
-            <tbody>
-                <td class="text-center">{{zapata.lxCol.toFixed(2)}}</td>
-                <td class="text-center">{{zapata.lyCol.toFixed(2)}}</td>
-                <td class="text-center">{{zapata.espesorZapata.toFixed(2)}}</td>
-                <td class="text-center">{{zapata.ladoxZap.toFixed(2)}}</td>
-                <td class="text-center">{{zapata.ladoyZap.toFixed(2)}}</td>
-                <td class="text-center"> x{{despieceZapata.refuerzoX.diametro}} a {{despieceZapata.sepX.toFixed(2)}} cm L= {{despieceZapata.longRefuerzoX.toFixed(2)}}</td>
-                <td class="text-center"> x{{despieceZapata.refuerzoY.diametro}} a {{despieceZapata.sepY.toFixed(2)}} cm L= {{despieceZapata.longRefuerzoY.toFixed(2)}}</td>
-            </tbody>
-        </table>
+    <div class="card-desc">
+        <p>Refuerzo en dirección X</p>
+        <ul>
+            <li>
+                {{despieceZapata.cantX}}{{despieceZapata.refuerzoX.diametro}} a {{despieceZapata.sepX.toFixed(2)}} cm L= {{despieceZapata.longRefuerzoX.toFixed(2)}}
+            </li>
+            <li>
+                Peso refuerzo en dirección X: {{despieceZapata.PesoX.toFixed(2)}} kgf
+            </li>
+        </ul>
+        <p>Refuerzo en dirección Y</p>
+        <ul>
+            <li>
+                {{despieceZapata.cantY}}{{despieceZapata.refuerzoY.diametro}} a {{despieceZapata.sepY.toFixed(2)}} cm L= {{despieceZapata.longRefuerzoY.toFixed(2)}}
+            </li>
+            <li>
+                Peso refuerzo en dirección Y: {{despieceZapata.PesoY.toFixed(2)}} kgf
+            </li>
+        </ul>
     </div>
 </div>

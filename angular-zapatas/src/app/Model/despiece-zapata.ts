@@ -13,6 +13,10 @@ export class DespieceZapata {
   gancho90Y: boolean;
   longRefuerzoX: number;
   longRefuerzoY: number;
+  cantX: number;
+  cantY: number;
+  PesoX: number;
+  PesoY: number;
 
   constructor(flexZapata: FlexionZapata) {
     this.flexionZapata = flexZapata;
@@ -26,6 +30,17 @@ export class DespieceZapata {
   public calcAsDef(refuerzo: Refuerzo, separacion: number) {
     const asi = refuerzo.area / (separacion / 100);
     return asi;
+  }
+
+  public calcPesoRef(refuerzo: Refuerzo, longitud: number, cantidad: number) {
+    const pesoi = refuerzo.pesoLineal * longitud * cantidad;
+    return pesoi;
+  }
+
+  public calcCantidad(longitudZapata: number, separacion: number) {
+
+    const cantidad = (longitudZapata - 2 * this.flexionZapata.zapata.recubrimiento) / (separacion / 100);
+    return (Math.round(cantidad) + 1);
   }
 
 }

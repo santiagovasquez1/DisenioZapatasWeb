@@ -53,6 +53,10 @@ export class DespieceZapataComponent implements OnInit {
       this.calcLongRef(this.despieceZapata.gancho90X, 'X1');
       this.calcLongRef(this.despieceZapata.gancho90Y, 'Y1');
 
+      this.calcPesoCant('X1');
+      this.calcPesoCant('Y1');
+
+
       this.fg = fb.group({
         RefuerzoX: [dataService.refuerzos[0], Validators.required],
         RefuerzoY: [dataService.refuerzos[0], Validators.required],
@@ -95,8 +99,27 @@ export class DespieceZapataComponent implements OnInit {
   }
 
   checkBoxOnChange(gancho: boolean, direccion: string) {
+
     this.calcLongRef(gancho, direccion);
+
+    this.calcPesoCant(direccion);
+
     this.dataService.despieceZapata = this.despieceZapata;
+  }
+
+  private calcPesoCant(direccion: string) {
+    switch (direccion) {
+      case 'X1':
+        this.despieceZapata.cantX = this.despieceZapata.calcCantidad(this.zapata.ladoxZap, this.despieceZapata.sepX);
+        this.despieceZapata.PesoX = this.despieceZapata.calcPesoRef(this.despieceZapata.refuerzoX,
+          this.despieceZapata.longRefuerzoX, this.despieceZapata.cantX);
+        break;
+      case 'Y1':
+        this.despieceZapata.cantY = this.despieceZapata.calcCantidad(this.zapata.ladoyZap, this.despieceZapata.sepY);
+        this.despieceZapata.PesoY = this.despieceZapata.calcPesoRef(this.despieceZapata.refuerzoY,
+          this.despieceZapata.longRefuerzoY, this.despieceZapata.cantY);
+        break;
+    }
   }
 
   private calcLongRef(gancho: boolean, direccion: string) {
@@ -133,16 +156,16 @@ export class DespieceZapataComponent implements OnInit {
         this.despieceZapata.refuerzoX = refuerzo;
         this.despieceZapata.asDefX = this.despieceZapata.calcAsDef(refuerzo, parseFloat(sep.value));
         this.calcLongRef(this.despieceZapata.gancho90X, direccion);
+        this.calcPesoCant('X1');
         break;
       case 'Y1':
         this.despieceZapata.sepY = parseFloat(sep.value);
         this.despieceZapata.refuerzoY = refuerzo;
         this.despieceZapata.asDefY = this.despieceZapata.calcAsDef(refuerzo, parseFloat(sep.value));
         this.calcLongRef(this.despieceZapata.gancho90Y, direccion);
+        this.calcPesoCant('Y1');
         break;
     }
   }
-
-
 
 }
