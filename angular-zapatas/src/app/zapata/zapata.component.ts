@@ -59,7 +59,7 @@ export class ZapataComponent implements OnInit {
     else {
       this.fg = fb.group({
         presionAdmisible: [dataService.zapata.PresionAdmisible, Validators.required],
-        gammaConcreto: [2.4, Validators.required],
+        gammaConcreto: [dataService.zapata.GammaConcreto, Validators.required],
         pServ: [dataService.zapata.P, Validators.required],
         mxServ: [dataService.zapata.mx, Validators.required],
         myServ: [dataService.zapata.my, Validators.required],

@@ -137,6 +137,7 @@ a.btn-card {
 
 .table {
     font-size: 12px;
+    word-break: break-all;
 }
 
 

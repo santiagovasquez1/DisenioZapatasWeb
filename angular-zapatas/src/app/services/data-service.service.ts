@@ -26,9 +26,9 @@ export class DataService {
   current: Subject<IChequeo> = new BehaviorSubject<IChequeo>(null);
   currentDespiece: Subject<DespieceZapata> = new BehaviorSubject<DespieceZapata>(null);
 
-  refuerzos = [new Refuerzo('#3', 0.71), new Refuerzo('#4', 1.29),
-  new Refuerzo('#5', 1.99), new Refuerzo('#6', 2.85), new Refuerzo('#7', 3.88),
-  new Refuerzo('#8', 5.10)];
+  refuerzos = [new Refuerzo('#3', 0.71, 0.13), new Refuerzo('#4', 1.29, 0.18),
+  new Refuerzo('#5', 1.99, 0.22), new Refuerzo('#6', 2.85, 0.27), new Refuerzo('#7', 3.88, 0.31),
+  new Refuerzo('#8', 5.10, 0.36)];
 
   public ejecutarCalculo(z: Zapata, caso: eTipoCalculo, phi: number) {
 
