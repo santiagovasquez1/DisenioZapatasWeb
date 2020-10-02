@@ -140,6 +140,41 @@ a.btn-card {
     word-break: break-all;
 }
 
+.Contact {
+    background-color: #026fff;
+    color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social {}
+
+.social-link {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    margin: 0 10px;
+}
+
+.social-link.facebook {
+    background-image: url('./assets/social/facebook.svg');
+}
+
+.social-link.github {
+    background-image: url('./assets/social/github.svg');
+}
+
+.social-link.instagram {
+    background-image: url('./assets/social/instagram.svg');
+}
+
+.social-link.linkedin {
+    background-image: url('./assets/social/linkedin.svg');
+}
+
 
 /* .car-header {
     font-size: 10px;
